@@ -15,7 +15,9 @@
     </div>
     <div id="jb-container" style="align-content: center;">
         <div id="jb-header"  style="text-align: center;">
-            상세 정보를 입력해주세요<br>
+		예약일 : ${revDate}<br>
+      	예약시간 : ${revTime}시<br>      
+		상세 정보를 입력해주세요<br>
             <p>
             <form action="" class = "form">
                 <div>

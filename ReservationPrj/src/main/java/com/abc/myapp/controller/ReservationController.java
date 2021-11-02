@@ -37,4 +37,13 @@ public class ReservationController {
 		model.addAttribute("revDate", revDate);
 		return "timeselect";
 	}
+	
+	@RequestMapping(value = "/reservation", method = RequestMethod.POST)
+	public String reservation(@RequestParam(value = "time") String time, @RequestParam(value = "revDate") Date date, Model model) {
+		String revTime = time;
+		Date revDate = date;
+		model.addAttribute("revDate", revDate);
+		model.addAttribute("revTime", revTime);
+		return "reservation";
+	}
 }

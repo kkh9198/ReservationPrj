@@ -16,18 +16,20 @@
         <div id="jb-header"  style="text-align: center;">
             ${revDate} 예약 시간을 선택해주세요<br>
             
-            <form action="">
+            <form action="reservation" method="post">
                 <select name="time">
             
-                    <option value="12"> 오후 1시
+                    <option value="13"> 오후 1시
             
                     <option value="14"> 오후 2시
             
                     <option value="18"> 오후 6시
             
                     <option value="20"> 오후 8시
-            
-            </select>
+            		
+            	</select>
+            	<input type="hidden" name="revDate" value="${revDate}">
+            	<input type="submit">
             </form>
             
         </div>
