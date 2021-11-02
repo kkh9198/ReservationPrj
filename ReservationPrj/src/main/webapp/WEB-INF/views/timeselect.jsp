@@ -14,24 +14,40 @@
 <body class="backGround">
     <div id="jb-container">
         <div id="jb-header"  style="text-align: center;">
-            ${revDate} 예약 시간을 선택해주세요<br>
-            
-            <form action="reservation" method="post">
-                <select name="time">
-            
-                    <option value="13"> 오후 1시
-            
-                    <option value="14"> 오후 2시
-            
-                    <option value="18"> 오후 6시
-            
-                    <option value="20"> 오후 8시
-            		
-            	</select>
-            	<input type="hidden" name="revDate" value="${revDate}">
-            	<input type="submit">
-            </form>
-            
+            예약 시간을 선택해주세요<br>
+            <form action="reservation" method="post"></form>
+            <table border="1" align="center">
+                <th>날짜</th>
+                <th>예약 타임</th>
+                <th>현재 예약 인원</th>
+                <th>예약하기</th>
+                    <tr>
+                        <td rowspan="5">${revDate} </td>
+                    </tr>
+                    <tr>
+                        <td>런치 1</td>
+                        <td>$</td>
+                        <td><input type="submit" name="revBtn" value="런치1"></td>
+                    </tr>
+                    <tr>
+                        <td>런치 2</td>
+                        <td>$</td>
+                        <td><input type="submit" name="revBtn" value="런치2"></td>
+                    </tr>
+                    <tr>
+                        <td>디너 1</td>
+                        <td>$</td>
+                        <td><input type="submit" name="revBtn" value="디너1"></td>
+                    </tr>
+                    <tr>
+                        <td>디너 2</td>
+                        <td>$</td>
+                        <td><input type="submit" name="revBtn" value="디너2"></td>
+                    </tr>
+                    
+            </table>
+        </form>
+
         </div>
 
 
