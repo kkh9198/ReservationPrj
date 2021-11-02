@@ -1,6 +1,7 @@
 package com.abc.myapp.controller;
 
 import java.sql.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,13 +36,15 @@ public class ReservationController {
 	public String time(@RequestParam(value="revDate") Date date, Model model) {
 		Date revDate = date;
 		model.addAttribute("revDate", revDate);
+		List<ReservationVO> revList = revService.getReservationCount(revDate);
+		model.addAttribute("revList", revList);
 		return "timeselect";
 	}
 	
 	// 날짜 시간 선택 후 예약 상세 정보 입력페이지로
 	@RequestMapping(value = "/reservation", method = RequestMethod.POST)
-	public String reservation(@RequestParam(value = "time") int time, @RequestParam(value = "revDate") Date date, Model model) {
-		int revTime = time;
+	public String reservation(@RequestParam(value = "time") String time, @RequestParam(value = "revDate") Date date, Model model) {
+		String revTime = time;
 		Date revDate = date;
 		model.addAttribute("revDate", revDate);
 		model.addAttribute("revTime", revTime);
@@ -53,6 +56,6 @@ public class ReservationController {
 	public String complete(ReservationVO rev, Model model) {
 		revService.insertReservation(rev);
 		model.addAttribute("rev", rev);
-		return "redirct:/";
+		return "redirect:/";
 	}
 }

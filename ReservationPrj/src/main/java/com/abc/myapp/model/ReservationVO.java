@@ -6,10 +6,9 @@ public class ReservationVO {
 	String name;
 	String phone;
 	Date bookingDate;
-	int bookingTime;
+	String bookingTime;
 	int cnt;
 	String details;
-	
 	public String getName() {
 		return name;
 	}
@@ -28,10 +27,10 @@ public class ReservationVO {
 	public void setBookingDate(Date bookingDate) {
 		this.bookingDate = bookingDate;
 	}
-	public int getBookingTime() {
+	public String getBookingTime() {
 		return bookingTime;
 	}
-	public void setBookingTime(int bookingTime) {
+	public void setBookingTime(String bookingTime) {
 		this.bookingTime = bookingTime;
 	}
 	public int getCnt() {
@@ -54,6 +53,5 @@ public class ReservationVO {
 		return "ReservationVO [name=" + name + ", phone=" + phone + ", bookingDate=" + bookingDate + ", bookingTime="
 				+ bookingTime + ", cnt=" + cnt + ", details=" + details + "]";
 	}
-	
 	
 }

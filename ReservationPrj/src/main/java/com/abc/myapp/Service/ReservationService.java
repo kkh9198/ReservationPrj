@@ -1,5 +1,8 @@
 package com.abc.myapp.Service;
 
+import java.sql.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +33,11 @@ public class ReservationService implements IReservationService {
 	@Override
 	public void deleteReservation(ReservationVO rev) {
 		reservationrepository.deleteReservation(rev);
+	}
+
+	@Override
+	public List<ReservationVO> getReservationCount(Date revDate) {
+		return reservationrepository.getReservationCount(revDate);
 	}
 
 }

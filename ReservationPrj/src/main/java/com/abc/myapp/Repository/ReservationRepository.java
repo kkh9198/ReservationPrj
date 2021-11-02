@@ -1,16 +1,17 @@
 package com.abc.myapp.Repository;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.abc.myapp.model.ReservationVO;
+
 
 @Repository
 public class ReservationRepository implements IReservationRepository {
@@ -22,12 +23,12 @@ public class ReservationRepository implements IReservationRepository {
 		@Override
 		public ReservationVO mapRow(ResultSet rs, int rowNum) throws SQLException {
 			ReservationVO rev = new ReservationVO();
-			rev.setName(rs.getString("name"));
-			rev.setPhone(rs.getString("phone"));
+//			rev.setName(rs.getString("name"));
+//			rev.setPhone(rs.getString("phone"));
 			rev.setBookingDate(rs.getDate("booking_date"));
-			rev.setBookingTime(rs.getInt("booking_time"));
+			rev.setBookingTime(rs.getString("booking_time"));
 			rev.setCnt(rs.getInt("cnt"));
-			rev.setDetails(rs.getString("details"));
+//			rev.setDetails(rs.getString("details"));
 			return rev;
 		}			
 	}
@@ -61,5 +62,15 @@ public class ReservationRepository implements IReservationRepository {
 		// TODO Auto-generated method stub
 
 	}
+
+	@Override
+	public List<ReservationVO> getReservationCount(Date revDate) {
+		String sql = "select booking_date, booking_time, sum(cnt) as cnt "
+				+ "from booking where booking_date=? group by  booking_date, booking_time "
+				+ "order by decode(booking_time, '런치1', 1, '런치2', 2, '디너1' ,3 , '디너2', 4)";
+		return jdbcTemplate.query(sql, new ReservationMapper(), revDate);
+	}
+
+
 
 }

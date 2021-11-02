@@ -15,45 +15,27 @@
     <div id="jb-container">
         <div id="jb-header"  style="text-align: center;">
             예약 시간을 선택해주세요<br>
-            <form action="reservation" method="post"></form>
+            <form action="reservation" method="post">
+            <input type="hidden" name = "revDate" value="${revDate}">
             <table border="1" align="center">
-                <th>날짜</th>
-                <th>예약 타임</th>
-                <th>현재 예약 인원</th>
-                <th>예약하기</th>
-                    <tr>
-                        <td rowspan="5">${revDate} </td>
-                    </tr>
-                    <tr>
-                        <td>런치 1</td>
-                        <td>$</td>
-                        <td><input type="submit" name="revBtn" value="런치1"></td>
-                    </tr>
-                    <tr>
-                        <td>런치 2</td>
-                        <td>$</td>
-                        <td><input type="submit" name="revBtn" value="런치2"></td>
-                    </tr>
-                    <tr>
-                        <td>디너 1</td>
-                        <td>$</td>
-                        <td><input type="submit" name="revBtn" value="디너1"></td>
-                    </tr>
-                    <tr>
-                        <td>디너 2</td>
-                        <td>$</td>
-                        <td><input type="submit" name="revBtn" value="디너2"></td>
-                    </tr>
-                    
+                <tr>
+                	<th>날짜</th>
+                	<th>예약 타임</th>
+                	<th>현재 예약 인원</th>
+                	<th>예약하기</th>
+                </tr>
+                <c:forEach var="rev" items="${revList}">
+					<tr>
+						<td>${revDate}</td>
+						<td>${rev.bookingTime}</td>
+						<td>${rev.cnt}</td>
+						<td><input type="submit" name="time" value="${rev.bookingTime}"></td>
+					</tr>
+				</c:forEach>
             </table>
-        </form>
-
+        	</form>
         </div>
-
-
     </div>
-
 </div>
-
 </body>
 </html>
