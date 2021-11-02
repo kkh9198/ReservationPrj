@@ -24,9 +24,11 @@
             </form>
             
             <p>
+            <form action="phone">
             <button class ="button-base ripple">
-                조회하기
+                	조회하기
             </button>
+            </form>
         </div>
         <div id="admin" style="font-size: small; text-align: right;" > 관리자 로그인 </div>
     </div>

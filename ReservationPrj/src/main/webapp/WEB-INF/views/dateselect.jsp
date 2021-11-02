@@ -15,10 +15,17 @@ pageEncoding="UTF-8"%>
     <div id="jb-container">
         <div id="jb-header"  style="text-align: center;">
             예약 날짜를 선택해주세요<br>
-
-            <input type="date">
-            
+			<form action="timeselect" method="post">
+            	<input type="date" name="revDate">
+            	<input type="submit">
+            </form>
         </div>
+        <br><br>
+        <div id="jb-header"  style="text-align: center;">
+            
+           
+        </div>
+        
 
 
     </div>

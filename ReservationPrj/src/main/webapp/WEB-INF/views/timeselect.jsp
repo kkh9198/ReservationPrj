@@ -14,7 +14,7 @@
 <body class="backGround">
     <div id="jb-container">
         <div id="jb-header"  style="text-align: center;">
-            예약 시간을 선택해주세요<br>
+            ${revDate} 예약 시간을 선택해주세요<br>
             
             <form action="">
                 <select name="time">
