@@ -27,9 +27,11 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-
+	
+	  
 	<view-controller path="/" view-name="main" />
-
+	
+	
 	<resources location="/WEB-INF/resources/" mapping="/**" />
 	<resources location="/WEB-INF/resources/images/"
 		mapping="/images/**" />

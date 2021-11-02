@@ -32,11 +32,16 @@ public class ReservationRepository implements IReservationRepository {
 		}			
 	}
 	
-	
 	@Override
 	public void insertReservation(ReservationVO rev) {
-//		String sql = ""
-
+		String sql = "insert into booking (name, phone, booking_date, booking_time, cnt, details) values (?,?,?,?,?,?)";
+		jdbcTemplate.update(sql,rev.getName(), 
+								rev.getPhone(),
+								rev.getBookingDate(),
+								rev.getBookingTime(),
+								rev.getCnt(),
+								rev.getDetails()
+							);
 	}
 
 	@Override

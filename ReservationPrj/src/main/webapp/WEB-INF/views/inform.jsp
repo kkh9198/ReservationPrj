@@ -16,7 +16,7 @@
         <div id="jb-header"  style="text-align: center;">
             예약 정보입니다.<br>
             <p>
-            성함 : <br>
+            성함 : ${rev.name}<br>
             핸드폰 번호 : <br>
             날짜 : <br>
             시간 : <br>

@@ -12,14 +12,18 @@
 
 </head>
 <body class="backGround">
-    </div>
+    <div>
     <div id="jb-container" style="align-content: center;">
-        <div id="jb-header"  style="text-align: center;">
-		예약일 : ${revDate}<br>
-      	예약시간 : ${revTime}시<br>      
-		상세 정보를 입력해주세요<br>
+        <div id="jb-header"  style="text-align: center;">      
+      상세 정보를 입력해주세요<br>
             <p>
-            <form action="" class = "form">
+            <form action="complete" method="post">
+            <div>
+                <label>예약일</label> : <input type="date" name="bookingDate" value="${revDate}" readonly="readonly"><br>
+                </div>
+                <div>
+                <label>예약시간</label> : <input type="text" name="bookingTime" value="${revTime}" readonly="readonly"><br>
+                </div>
                 <div>
                 <label>예약자명</label> : <input type="text" name="name"><br>
                 </div>
@@ -30,7 +34,7 @@
                 <label>인원 :</label> <input type="number" name="cnt"><p>
                 </div>
                 <div>
-                <label>특이 사항</label> : <textarea rows="5" cols="100"></textarea>
+                <label>특이 사항</label> : <input type="text" name="details">
                 </div>
                 <button type="submit" class="button-base ripple"> 예약하기 </button>
             </form>

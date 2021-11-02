@@ -9,6 +9,7 @@ public class ReservationVO {
 	int bookingTime;
 	int cnt;
 	String details;
+	
 	public String getName() {
 		return name;
 	}
