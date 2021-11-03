@@ -9,44 +9,83 @@
 <head>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
-
+<!-- Favicon -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"></script>
 </head>
-<body class="backGround">
-    <div>
+
+<body class="container">
+
     <div id="jb-container" style="align-content: center;">
         <div id="jb-header"  style="text-align: center;">      
-      상세 정보를 입력해주세요<br>
-            <p>
+
+      	    <h1>상세 정보를 입력해주세요</h1><p>
+      	    <div class="fade-in-box">
             <form action="complete" method="post">
-            <div>
-                <label>예약일</label> : <input type="date" name="bookingDate" value="${revDate}" readonly="readonly"><br>
-                </div>
-                <div>
-                <label>예약시간</label> : <input type="text" name="bookingTime" value="${revTime}" readonly="readonly"><br>
-                </div>
-                <div>
-                <label>예약자명</label> : <input type="text" name="name"><br>
-                </div>
-                <div>
-                <label>핸드폰 번호</label> : <input type="text" name="phone"><p>
-                </div>
-                <div>
-                <label>인원 :</label> <input type="number" name="cnt"><p>
-                </div>
-                <div>
-                <label>특이 사항</label> : <input type="text" name="details">
-                </div>
-                <button type="submit" class="button-base ripple"> 예약하기 </button>
+            <table class="type10">
+                <tr>
+                    <td>예약일 : </td>
+                    <td><input type="date" name="bookingDate" value="${revDate}" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <td>예약시간 : </td>
+                    <td><input type="text" name="bookingTime" value="${revTime}" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <td>예약자명 : </td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td>연락처 : </td>
+                    <td><input type="text" name="phone"></td>
+                </tr>
+                <tr>
+                    <td>예약 인원 : </td>
+                    <td><input type="number" name="cnt"></td>
+                </tr>
+                <tr>
+                    <td>요청 사항 : </td>
+                    <td><input type="text" name="details"></td>
+                </tr>
+            </table><br>
+            <button type="submit" class="button-base ripple"> 예약하기 </button>
+	        <button type='button' id="modal_btn">모달창아 나와랏</button>
+				<div class="black_bg"></div>
+				<div class="modal_wrap">
+	   				<div class="modal_close"><a href="#">close</a></div>
+				    <div>
+				    	${revDate}
+				    	<input type="text" id="rerid">
+				    	${name}
+				    </div>
+	            </div>
             </form>
-            
-
-            
         </div>
-
-
     </div>
+    </div>
+    <script>
+    window.onload = function() {
+ 
+    function onClick() {
+        document.querySelector('.modal_wrap').style.display ='block';
+        document.querySelector('.black_bg').style.display ='block';
+        
+        	function transferData(name){
+        		$('#rerid').val(name)
+        	}
+    }   
+    
+    function offClick() {
+        document.querySelector('.modal_wrap').style.display ='none';
+        document.querySelector('.black_bg').style.display ='none';
+    }
+ 
+    document.getElementById('modal_btn').addEventListener('click', onClick);
+    document.querySelector('.modal_close').addEventListener('click', offClick);
+ 
+	};
+	</script>
 
-</div>
 
 </body>
 </html>
