@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
-<link href="css/reservation.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reservation.css">
 <head>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
@@ -16,7 +16,7 @@
         <div id="jb-header"  style="text-align: center;">
             예약 정보입니다.<br>
             <p>
-            성함 : <br>
+            성함 : ${rev.name}<br>
             핸드폰 번호 : <br>
             날짜 : <br>
             시간 : <br>
