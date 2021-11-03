@@ -1,4 +1,29 @@
-  .ripple {
+@media screen and (max-width: 1200px) {
+    .main-title{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main-title{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-title{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main-title{
+        font-size: 30px;
+    }
+}
+
+
+.ripple {
     position: absolute;
     top: 50%;
     left: 0px;
@@ -68,9 +93,10 @@
 
 .container{
     align-items: center;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(248, 255, 255);
+    background-color: rgb(241, 241, 241);
+    width: 100vw;
+    height: 500px;
+    justify-content: center;
 }
 
 @keyframes scale-in-center {
@@ -164,7 +190,7 @@
     border-bottom: 3px solid #036;
   }
   table.type09 tbody th {
-    width: 100px;
+    width: -10px;
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
@@ -177,3 +203,7 @@
     vertical-align: top;
     border-bottom: 1px solid #ccc;
   }
+
+.table-form{
+    width: 400px;
+}

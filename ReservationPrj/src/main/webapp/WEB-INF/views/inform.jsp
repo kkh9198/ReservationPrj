@@ -5,31 +5,42 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
-<link href="css/reservation.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/reservation.css">
 <head>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
 
 </head>
-<body class="backGround">
+<body class="container">
     <div id="jb-container" style="align-content: center;">
         <div id="jb-header"  style="text-align: center;">
-            예약 정보입니다.<br>
-            <p>
-            성함 : ${rev.name}<br>
-            핸드폰 번호 : <br>
-            날짜 : <br>
-            시간 : <br>
-            인원 : <br>
-
-            <button>수정</button> <button>삭제</button>
-
+            <h1>${rev.name}님의 예약 정보입니다.</h1><br>
+     <table class="type09"> 
+<tr>
+   <th>이름</th>
+   <th>핸드폰번호</th>
+   <th>예약일</th>
+   <th>예약시간</th>
+   <th>예약인원</th>
+   <th>전달사항</th>
+   <th>예약 변경</th>
+</tr>   
+<c:forEach var ="rev" items="${revList}"> 
+<tr>
+   <td>${rev.name}</td>
+   <td>${rev.phone}</td>
+   <td>${rev.bookingDate}</td>
+   <td>${rev.bookingTime}</td>
+   <td>${rev.cnt}</td>
+   <td>${rev.details}</td>
+   <td><button>수정</button> &nbsp <button>삭제</button></td>
+</tr>
+   
+</c:forEach>
+</table>
         </div>
-
-
     </div>
-
 </div>
-
 </body>
 </html>
+
