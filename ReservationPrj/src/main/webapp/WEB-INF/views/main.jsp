@@ -6,14 +6,14 @@
 
 <!DOCTYPE html>
 <html>
-<link href="css/reservation.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reservation.css">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, intial-scale=1.0">
 <title>삼조식당 예약</title>
 
 </head>
-<body class="backGround-img">
+<body class="container">
     <div id="jb-container">
         <div id="jb-header"  style="text-align: center;">
             <h1>안녕하세요<p>삼조식당 예약 시스템입니다.</p></h1>
@@ -37,3 +37,4 @@
 
 </footer>
 </html>
+
