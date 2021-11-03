@@ -12,6 +12,7 @@
 
 </head>
 <body class="backGround">
+	<form action="" method="post">
     <div id="jb-container" style="align-content: center;">
         <div id="jb-header"  style="text-align: center;">
       	관리자 페이지 입니다.<br>      
@@ -24,7 +25,7 @@
 
 
     </div>
-
+	</form>
 </div>
 
 </body>
