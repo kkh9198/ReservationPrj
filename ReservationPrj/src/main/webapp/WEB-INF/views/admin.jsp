@@ -10,8 +10,12 @@
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
 
+<!-- Favicon -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript"></script>
+
 </head>
-<body class="backGround">
+<body class="container">
 	<form action="adminOK" method="post">
     <div id="jb-container" style="align-content: center;">
         <div id="jb-header"  style="text-align: center;">
@@ -21,10 +25,11 @@
             	로그인실패입니다. 다시 아이디와 비밀번호를 입력하세요<br>
             </c:if>
 			아이디: <input type="text" name="adminId"><br>
-			비밀번호 : <input type="password" name="adminPw"> <br>
-			<button input type="submit">확인</button> <button>취소</button>
+			비밀번호 : <input type="password" name="adminPw"> <br><br>
+			<input class ="button-base ripple" type="submit" value="확인"> <input class ="button-base ripple" type="reset" value="취소">
         </div>
     </div>
     </form>
+    
 </body>
 </html>
