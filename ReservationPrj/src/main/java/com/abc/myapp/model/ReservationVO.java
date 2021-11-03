@@ -9,6 +9,7 @@ public class ReservationVO {
 	String bookingTime;
 	int cnt;
 	String details;
+	int serialNumber;
 	public String getName() {
 		return name;
 	}
@@ -45,13 +46,16 @@ public class ReservationVO {
 	public void setDetails(String details) {
 		this.details = details;
 	}
-	public ReservationVO() {
-		super();
+	public int getSerialNumber() {
+		return serialNumber;
+	}
+	public void setSerialNumber(int serialNumber) {
+		this.serialNumber = serialNumber;
 	}
 	@Override
 	public String toString() {
 		return "ReservationVO [name=" + name + ", phone=" + phone + ", bookingDate=" + bookingDate + ", bookingTime="
-				+ bookingTime + ", cnt=" + cnt + ", details=" + details + "]";
+				+ bookingTime + ", cnt=" + cnt + ", details=" + details + ", serialNumber=" + serialNumber + "]";
 	}
 	
 }

@@ -6,11 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.abc.myapp.Service.IReservationService;
+import com.abc.myapp.Service.ReservationService;
 import com.abc.myapp.model.ReservationVO;
 
 @Controller
@@ -58,4 +60,25 @@ public class ReservationController {
 		model.addAttribute("rev", rev);
 		return "redirect:/";
 	}
+	//예약 조회 
+	@RequestMapping(value = "/inform", method = RequestMethod.POST)
+	public String getReservation(String phone, Model model) {
+		List<ReservationVO> revList = revService.getReservation(phone);
+		model.addAttribute("revList", revList);
+		return "inform";
+	}
+//	//예약 조회에서 삭제
+//	@RequestMapping("/{serailNumber}")
+//	public String delete(@PathVariable int number, Model model) {
+//		List<ReservationVO> revList = revService.getReservation(phone);
+//		model.addAttribute("revList", revList);
+//		return "inform";
+//	}
+//	//예약 조회 에서 수정
+//	@RequestMapping(value = "/inform", method = RequestMethod.POST)
+//	public String getReservation(String phone, Model model) {
+//		List<ReservationVO> revList = revService.getReservation(phone);
+//		model.addAttribute("revList", revList);
+//		return "inform";
+//	}
 }

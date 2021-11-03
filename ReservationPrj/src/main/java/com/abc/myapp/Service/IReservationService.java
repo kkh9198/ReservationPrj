@@ -7,8 +7,8 @@ import com.abc.myapp.model.ReservationVO;
 
 public interface IReservationService {
 	void insertReservation(ReservationVO rev);
-	int getReservation(String phone);
+	List<ReservationVO> getReservation(String phone);
 	void updateReservation(ReservationVO rev);
-	void deleteReservation(ReservationVO rev);
+	void deleteReservation(int number);
 	List<ReservationVO> getReservationCount(Date revDate);
 }

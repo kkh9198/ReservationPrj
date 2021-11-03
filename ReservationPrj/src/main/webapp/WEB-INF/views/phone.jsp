@@ -12,19 +12,22 @@
 
 </head>
 <body class="backGround">
-
+<form action="inform" method="post">
+            	
+            	
+            
     <div id="jb-container" style="align-content: center;">
         <div id="jb-header"  style="text-align: center;">
             핸드폰 번호를 입력해주세요<br>
             <p>
-                <input type="text">
-
+                <input type="text" name = "phone">
+				<input class ="button-base ripple" type="submit" value="확인">
         </div>
 
 
     </div>
 
-</div>
+</form>
 
 </body>
 </html>

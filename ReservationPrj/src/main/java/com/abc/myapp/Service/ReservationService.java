@@ -21,7 +21,7 @@ public class ReservationService implements IReservationService {
 	}
 
 	@Override
-	public int getReservation(String phone) {
+	public List<ReservationVO> getReservation(String phone) {
 		return reservationrepository.getReservation(phone);
 	}
 
@@ -31,8 +31,8 @@ public class ReservationService implements IReservationService {
 	}
 
 	@Override
-	public void deleteReservation(ReservationVO rev) {
-		reservationrepository.deleteReservation(rev);
+	public void deleteReservation(int number) {
+		reservationrepository.deleteReservation(number);
 	}
 
 	@Override
