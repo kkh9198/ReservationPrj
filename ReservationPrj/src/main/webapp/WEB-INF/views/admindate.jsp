@@ -14,7 +14,8 @@
 <body class="backGround">
     <div id="jb-container" style="align-content: center;">
         <div id="jb-header"  style="text-align: center;">
-            조회하실 날짜를 선택해주세요.<br>
+      	관리자 페이지 입니다.<br>      
+ 		조회하실 날짜를 선택해주세요.<br>
             <p>
             날짜 : <input type="date">
             <button input type="submit">확인</button> <button>취소</button>

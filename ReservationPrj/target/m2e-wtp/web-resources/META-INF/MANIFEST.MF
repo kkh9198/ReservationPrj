@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: kkh91
 Build-Jdk: 1.8.0_301
 Created-By: Maven Integration for Eclipse
 
+=======
+Manifest-Version: 1.0
+Built-By: shs32
+Build-Jdk: 1.8.0_301
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> branch 'master' of https://github.com/kkh9198/ReservationPrj.git

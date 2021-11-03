@@ -30,7 +30,12 @@
             </button>
             </form>
         </div>
-        <div id="admin" style="font-size: small; text-align: right;" > 관리자 로그인 </div>
+        <p><p>
+        <div id="admin" style="font-size: small; text-align: center;" > 
+        	<form action="adminLogin">
+        		<button>관리자 로그인</button>
+        	</form>
+        </div>
     </div>
 </body>
 <footer>
