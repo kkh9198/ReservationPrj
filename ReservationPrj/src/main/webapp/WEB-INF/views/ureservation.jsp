@@ -36,31 +36,32 @@
 
       	    <h1>상세 정보를 입력해주세요</h1><p>
       	    <div class="fade-in-box">
-            <form action="complete" method="post">
+            <form action="updateComplete" method="post">
+            <input type="hidden" name="targetNumber" value="${targetNumber}">
             <table class="type10">
                 <tr>
                     <td>예약일 : </td>
-                    <td><input type="date" name="bookingDate" value="${revDate}" readonly="readonly" id="date"></td>
+                    <td><input type="date" name="bookingDate" value="${updateDate}" readonly="readonly" id="date"></td>
                 </tr>
                 <tr>
                     <td>예약시간 : </td>
-                    <td><input type="text" name="bookingTime" value="${revTime}" readonly="readonly" id="time"></td>
+                    <td><input type="text" name="bookingTime" value="${updateTime}" readonly="readonly" id="time"></td>
                 </tr>
                 <tr>
                     <td>예약자명 : </td>
-                    <td><input type="text" name="name" id="name"></td>
+                    <td><input type="text" name="name" value="${targetName}" id="name"></td>
                 </tr>
                 <tr>
                     <td>연락처 : </td>
-                    <td><input type="text" name="phone" pattern="^[0-9]+$" id="phone"></td>
+                    <td><input type="text" name="phone" value="${targetPhone}" pattern="^[0-9]+$" id="phone"></td>
                 </tr>
                 <tr>
                     <td>예약 인원 : </td>
-                    <td><input type="number" name="cnt" id="cnt"></td>
+                    <td><input type="number" name="cnt" value="${targetCnt}" id="cnt"></td>
                 </tr>
                 <tr>
                     <td>요청 사항 : </td>
-                    <td><input type="text" name="details" id="details"></td>
+                    <td><input type="text" name="details" value="${targetDetails}" id="details"></td>
                 </tr>
             </table><br>
                     <!-- Button to invoke the modal -->
@@ -121,8 +122,8 @@
         var name = $("#name").val();
         var phone = $("#phone").val();
         var cnt = $("#cnt").val();
-        var date = "${revDate}";
-        var time = "${revTime}";
+        var date = "${updateDate}";
+        var time = "${updateTime}";
         var details = $("#details").val();
         var str = "예약 정보를 확인해주세요";
         var str1 = "성함: " + name ;

@@ -18,8 +18,13 @@
         <div id="jb-header" style="text-align: center;">
             <h1>변경할 시간을 선택해주세요<br></h1>
         <div class="fade-in-box">
-        <form action="reservation" method="post">
-           <input type="hidden" name="revDate" value="${revDate}">
+        <form action="updateReservation" method="post">
+           <input type="hidden" name="updateDate" value="${updateDate}">
+           <input type="hidden" name="targetNumber" value="${targetNumber}">
+           <input type="hidden" name="targetName" value="${targetName}">
+           	<input type="hidden" name="targetPhone" value="${targetPhone}">
+			<input type="hidden" name="targetCnt" value="${targetCnt}">
+			<input type="hidden" name="targetDetails" value="${targetDetails}">
             <table class="type09">
                 <th>날짜</th>
                 <th>예약 타임</th>

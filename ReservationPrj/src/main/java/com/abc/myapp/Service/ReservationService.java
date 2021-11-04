@@ -52,4 +52,9 @@ public class ReservationService implements IReservationService {
 		return reservationrepository.getUpdateReservationCount(updateDate, targetNumber);
 	}
 
+	@Override
+	public void updateReservation(ReservationVO rev, int targetNumber) {
+		reservationrepository.updateReservation(rev, targetNumber);
+	}
+
 }

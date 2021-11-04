@@ -24,9 +24,14 @@ pageEncoding="UTF-8"%>
         <div id="jb-header"  style="text-align: center;">
             <h1>변경하실 날짜를 선택해주세요<br></h1>
             <h1>변경하는 예약번호는 ${targetNumber} 입니다.<br></h1>
+            <h1>변경하는 예약자 이름은 ${targetName} 입니다.<br></h1>
             <div class="fade-in-box">
          	<form action="updateTimeselect" method="post">
          		<input type="hidden" name="targetNumber" value="${targetNumber}">
+         		<input type="hidden" name="targetName" value="${targetName}">
+           		<input type="hidden" name="targetPhone" value="${targetPhone}">
+				<input type="hidden" name="targetCnt" value="${targetCnt}">
+				<input type="hidden" name="targetDetails" value="${targetDetails}">
 	        	<table class="type10">
 	         	<tr>
 	            	<td><label>날짜</label></td>

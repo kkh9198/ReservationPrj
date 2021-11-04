@@ -85,20 +85,71 @@ public class ReservationController {
 	
 	// 예약 수정버튼을 누르면 날짜 선택 페이지로
 	@RequestMapping(value="/update", method=RequestMethod.POST)
-	public String update(@RequestParam(value = "targetNumber") int targetNumber, Model model) {
+	public String update(@RequestParam(value = "targetNumber") int targetNumber,
+			@RequestParam(value = "targetName") String targetName,
+			@RequestParam(value = "targetPhone") String targetPhone,
+			@RequestParam(value = "targetCnt") String targetCnt,
+			@RequestParam(value = "targetDetails") String targetDetails,
+			Model model) {
 		model.addAttribute("targetNumber", targetNumber);
+		model.addAttribute("targetName", targetName);
+		model.addAttribute("targetPhone", targetPhone);
+		model.addAttribute("targetCnt", targetCnt);
+		model.addAttribute("targetDetails", targetDetails);
 		return "udateselect";
 	}
 	
 	// 수정할 날짜 선택후 수정할 시간을 선택하는 페이지로 
 	@RequestMapping(value = "/updateTimeselect", method = RequestMethod.POST )
-	public String updateTime(@RequestParam(value="updateDate") Date date, @RequestParam(value="targetNumber") int target, Model model) {
+	public String updateTime(@RequestParam(value="updateDate") Date date, 
+			@RequestParam(value="targetNumber") int targetNumber,
+			@RequestParam(value = "targetName") String targetName,
+			@RequestParam(value = "targetPhone") String targetPhone,
+			@RequestParam(value = "targetCnt") String targetCnt,
+			@RequestParam(value = "targetDetails") String targetDetails,
+			Model model) {
 		Date updateDate = date;
-		int targetNumber = target;
 		model.addAttribute("updateDate", updateDate);
+		model.addAttribute("targetNumber", targetNumber);
+		model.addAttribute("targetName", targetName);
+		model.addAttribute("targetPhone", targetPhone);
+		model.addAttribute("targetCnt", targetCnt);
+		model.addAttribute("targetDetails", targetDetails);
 		List<ReservationVO> revList = revService.getUpdateReservationCount(updateDate, targetNumber);
 		model.addAttribute("revList", revList);
 		return "utimeselect";
+	}
+	
+	// 날짜 시간 선택 후 예약 업데이트 상세 정보 입력페이지로
+	@RequestMapping(value = "/updateReservation", method = RequestMethod.POST)
+	public String updateReservation(@RequestParam(value = "time") String time, 
+			@RequestParam(value = "updateDate") Date date, 
+			@RequestParam(value="targetNumber") int targetNumber,
+			@RequestParam(value = "targetName") String targetName,
+			@RequestParam(value = "targetPhone") String targetPhone,
+			@RequestParam(value = "targetCnt") String targetCnt,
+			@RequestParam(value = "targetDetails") String targetDetails,
+			Model model) {
+		String updateTime = time;
+		Date updateDate = date;
+		model.addAttribute("updateDate", updateDate);
+		model.addAttribute("updateTime", updateTime);
+		model.addAttribute("targetNumber", targetNumber);
+		model.addAttribute("targetName", targetName);
+		model.addAttribute("targetPhone", targetPhone);
+		model.addAttribute("targetCnt", targetCnt);
+		model.addAttribute("targetDetails", targetDetails);
+		return "ureservation";
+	}
+	
+	// 예약 업데이이트 상세 정보 입력 후 업데이트 완료
+	@RequestMapping(value = "/updateComplete", method = RequestMethod.POST)
+	public String updateComplete(ReservationVO rev, @RequestParam(value="targetNumber") int target, Model model) {
+		int targetNumber = target;
+		model.addAttribute("targetNumber", targetNumber);
+		revService.updateReservation(rev, targetNumber);
+		model.addAttribute("rev", rev);
+		return "redirect:/";
 	}
 	
 //	@RequestMapping(value="/update", method=RequestMethod.GET)
