@@ -133,13 +133,27 @@ public class ReservationRepository implements IReservationRepository {
 				serialNumber
 				);
 	}
-
+	
+	// 
 	@Override
 	public int getAvailableCnt(ReservationVO rev, int targetNumber) {
 		String sql = "select cnt from ( select booking_date,booking_time,sum(cnt) as cnt from booking where booking_date=? and booking_time=? and serial_number != ? group by booking_date,booking_time )";
 		try {
 			ReservationVO sample = jdbcTemplate.queryForObject(sql, new ReservationMapper_cnt(),
 					rev.getBookingDate(), rev.getBookingTime(), targetNumber);
+			return sample.getCnt();
+		} catch (Exception e) {
+			return 0;
+		}	
+		
+	}
+	
+	@Override
+	public int getAvailableCnt(ReservationVO rev) {
+		String sql = "select cnt from ( select booking_date,booking_time,sum(cnt) as cnt from booking where booking_date=? and booking_time=? group by booking_date,booking_time )";
+		try {
+			ReservationVO sample = jdbcTemplate.queryForObject(sql, new ReservationMapper_cnt(),
+					rev.getBookingDate(), rev.getBookingTime());
 			return sample.getCnt();
 		} catch (Exception e) {
 			return 0;

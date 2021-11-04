@@ -62,4 +62,9 @@ public class ReservationService implements IReservationService {
 		return reservationrepository.getAvailableCnt(rev, targetNumber);
 	}
 
+	@Override
+	public int getAvailableCnt(ReservationVO rev) {
+		return reservationrepository.getAvailableCnt(rev);
+	}
+
 }

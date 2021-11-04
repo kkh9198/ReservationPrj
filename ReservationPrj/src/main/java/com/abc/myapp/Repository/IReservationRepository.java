@@ -16,4 +16,5 @@ public interface IReservationRepository {
 	List<ReservationVO> getUpdateReservationCount(Date updateDate, int targetNumber); //업데이트된 예약일의 인원을 받아오는 메서드
 	void updateReservation(ReservationVO rev, int targetNumber); // 해당 시리얼 넘버의 예약을 업데이트 하는 메서드
 	int getAvailableCnt(ReservationVO rev, int targetNumber); // 해당 시리얼 넘버를 제외한 예약인원수를 조회할 메서드
+	int getAvailableCnt(ReservationVO rev); // 해당 시리얼 넘버를 제외한 예약인원수를 조회할 메서드 - 새로 예약시
 }

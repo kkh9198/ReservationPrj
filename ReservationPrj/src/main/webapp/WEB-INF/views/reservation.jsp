@@ -57,7 +57,7 @@
                 </tr>
                 <tr>
                     <td>예약 인원 : </td>
-                    <td><input type="number" name="cnt" id="cnt"></td>
+                    <td><input type="number" name="cnt" id="cnt" min="0" max="${10-cnt}"></td>
                 </tr>
                 <tr>
                     <td>요청 사항 : </td>

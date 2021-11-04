@@ -36,6 +36,7 @@
                            <c:choose>
                               <c:when test="${rev.bookingTime=='런치1'}" >
                                  <td>${rev.cnt}</td>
+                                 <input type="hidden" name="cnt" value="${rev.cnt}">
                                  <c:set var="data" value="yes"/>
                               </c:when>
                               <c:otherwise>
@@ -45,7 +46,9 @@
                         <c:if test="${data != 'yes'}">
                            <td>0</td>
                         </c:if>
-                        <td><input class = "button-base ripple"  type="submit" name="time" value="런치1"></td>
+                        <td>
+                        	<input class = "button-base ripple"  type="submit" name="time" value="런치1">
+                        </td>
                     </tr>
                     <tr>
                         <td>런치 2</td>
@@ -53,7 +56,7 @@
                         <c:forEach var="rev" items="${revList}">
                            <c:choose>
                               <c:when test="${rev.bookingTime=='런치2'}">
-                                 <td>${rev.cnt}</td>
+                                 <td><input type="hidden" name="cnt" value="${rev.cnt}">${rev.cnt}</td>
                                  <c:set var="data" value="yes"/>
                               </c:when>
                               <c:otherwise>
@@ -63,8 +66,10 @@
                         <c:if test="${data != 'yes'}">
                            <td>0</td>
                         </c:if>                       
-                        <td><input class = "button-base ripple"  type="submit" name="time" value="런치2"></td>
-                    </tr>
+                        <td>
+                        	<input class = "button-base ripple"  type="submit" name="time" value="런치2">
+                    	</td>	
+                    	</tr>
                     <tr>
                         <td>디너 1</td>
                         <c:set var="data" value="no"/>
@@ -72,6 +77,7 @@
                            <c:choose>
                               <c:when test="${rev.bookingTime=='디너1'}">
                                  <td>${rev.cnt}</td>
+                                 <input type="hidden" name="cnt" value="${rev.cnt}">
                                  <c:set var="data" value="yes"/>
                               </c:when>
                               <c:otherwise>
@@ -81,7 +87,10 @@
                         <c:if test="${data != 'yes'}">
                            <td>0</td>
                         </c:if>                       
-                        <td><input class = "button-base ripple"  type="submit" name="time" value="디너1"></td>
+                        <td>
+                        	<input class = "button-base ripple"  type="submit" name="time" value="디너1">
+                        	
+                        </td>
                     </tr>
                     <tr>
                         <td>디너 2</td>
@@ -90,6 +99,7 @@
                            <c:choose>
                               <c:when test="${rev.bookingTime=='디너2'}">
                                  <td>${rev.cnt}</td>
+                                 <input type="hidden" name="cnt" value="${rev.cnt}">								
                                  <c:set var="data" value="yes"/>
                               </c:when>
                               <c:otherwise>
@@ -99,7 +109,10 @@
                         <c:if test="${data != 'yes'}">
                            <td>0</td>
                         </c:if>                        
-                        <td><input class = "button-base ripple"  type="submit" name="time" value="디너2"></td>
+                        <td>
+                        	<input class = "button-base ripple"  type="submit" name="time" value="디너2">
+                        </td>
+                        
                     </tr>                    
             </table>
         </form>

@@ -47,11 +47,16 @@ public class ReservationController {
 	
 	// 날짜 시간 선택 후 예약 상세 정보 입력페이지로
 	@RequestMapping(value = "/reservation", method = RequestMethod.POST)
-	public String reservation(@RequestParam(value = "time") String time, @RequestParam(value = "revDate") Date date, Model model) {
+	public String reservation(@RequestParam(value = "time") String time,
+			@RequestParam(value = "revDate") Date date,
+			@RequestParam(value = "cnt") int cnt,
+			Model model) {
 		String revTime = time;
 		Date revDate = date;
+		int revCnt = cnt;
 		model.addAttribute("revDate", revDate);
 		model.addAttribute("revTime", revTime);
+		model.addAttribute("cnt", revCnt);
 		return "reservation";
 	}
 	
@@ -63,12 +68,20 @@ public class ReservationController {
 //		return "redirect:/";
 //	}
 	
-	// 예약 상세 정보 입력 후 예약 완료 -- 인원 제한 기능 추가 전
+	// 예약 상세 정보 입력 후 예약 완료 
 	@RequestMapping(value = "/complete", method = RequestMethod.POST)
-	public String complete(ReservationVO rev, Model model) {
-		revService.insertReservation(rev);
-		model.addAttribute("rev", rev);
-		return "redirect:/";
+	public String complete(ReservationVO rev,
+			@RequestParam(value="cnt") int cnt,
+			Model model) {
+		int available_cnt = revService.getAvailableCnt(rev); // targetNumber에 해당하는 예약을 제외한 cnt 를 int로 받아옴
+		// T면 오류행 / F면 정상 업데이트
+		if (available_cnt + cnt <= 10) { // 받아온 cnt를 입력한 rev.cnt와 합쳐서 10이 넘는지 T/F반환
+			revService.insertReservation(rev);
+//			model.addAttribute("rev", rev);
+			return "redirect:/";
+		}else {
+			return "redirect:/";
+		}
 	}
 	
 	//예약 조회 
