@@ -151,6 +151,7 @@ public class ReservationController {
 			@RequestParam(value = "targetPhone") String targetPhone,
 			@RequestParam(value = "targetCnt") String targetCnt,
 			@RequestParam(value = "targetDetails") String targetDetails,
+			@RequestParam(value = "cnt") int revCnt,
 			Model model) {
 		String updateTime = time;
 		Date updateDate = date;
@@ -161,6 +162,7 @@ public class ReservationController {
 		model.addAttribute("targetPhone", targetPhone);
 		model.addAttribute("targetCnt", targetCnt);
 		model.addAttribute("targetDetails", targetDetails);
+		model.addAttribute("cnt", revCnt);
 		return "ureservation";
 	}
 	
