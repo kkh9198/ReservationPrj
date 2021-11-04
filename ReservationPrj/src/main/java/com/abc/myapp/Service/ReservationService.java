@@ -31,13 +31,20 @@ public class ReservationService implements IReservationService {
 	}
 
 	@Override
-	public void deleteReservation(int number) {
-		reservationrepository.deleteReservation(number);
+	public List<ReservationVO> getReservationCount(Date revDate) {
+		return reservationrepository.getReservationCount(revDate);
 	}
 
 	@Override
-	public List<ReservationVO> getReservationCount(Date revDate) {
-		return reservationrepository.getReservationCount(revDate);
+	public ReservationVO getReservationInfo(int number) {
+		
+		return reservationrepository.getReservationInfo(number);
+	}
+
+	@Override
+	public void deleteReservation(int number, String phone) {
+		reservationrepository.deleteReservation(number, phone);
+		
 	}
 
 }

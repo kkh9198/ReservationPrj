@@ -15,6 +15,8 @@ import com.abc.myapp.Service.IReservationService;
 import com.abc.myapp.Service.ReservationService;
 import com.abc.myapp.model.ReservationVO;
 
+
+
 @Controller
 public class ReservationController {
 	
@@ -67,18 +69,32 @@ public class ReservationController {
 		model.addAttribute("revList", revList);
 		return "inform";
 	}
-//	//예약 조회에서 삭제
-//	@RequestMapping("/{serailNumber}")
-//	public String delete(@PathVariable int number, Model model) {
-//		List<ReservationVO> revList = revService.getReservation(phone);
-//		model.addAttribute("revList", revList);
-//		return "inform";
+	//GET으로 삭제 요청
+	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	public String delete(int number, Model model) {
+		model.addAttribute("rev", revService.getReservationInfo(number));
+		return "deleteform";
+	}
+
+	//POST으로 삭제 요청
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public String delete(int number,String phone) {
+		revService.deleteReservation(number, phone);
+		return "redirect:/";
+	}
+	
+//	@RequestMapping(value="/update", method=RequestMethod.GET)
+//	public String updateEmp(int empid, Model model) {
+//		model.addAttribute("emp", empService.getEmpInfo(empid));
+//		model.addAttribute("deptList", empService.getAllDeptId());
+//		model.addAttribute("jobList", empService.getAllJobId());
+//		model.addAttribute("managerList", empService.getAllManagerId());
+//		return "hr/updateform";
 //	}
-//	//예약 조회 에서 수정
-//	@RequestMapping(value = "/inform", method = RequestMethod.POST)
-//	public String getReservation(String phone, Model model) {
-//		List<ReservationVO> revList = revService.getReservation(phone);
-//		model.addAttribute("revList", revList);
-//		return "inform";
+//	
+//	@RequestMapping(value="/hr/update", method=RequestMethod.POST)
+//	public String updateEmp(EmpVO emp) {
+//		empService.updateEmp(emp);
+//		return "redirect:/hr/" + emp.getEmployeeId();
 //	}
 }

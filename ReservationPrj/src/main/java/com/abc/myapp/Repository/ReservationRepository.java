@@ -71,11 +71,6 @@ public class ReservationRepository implements IReservationRepository {
 
 	}
 
-	@Override
-	public void deleteReservation(int number) {
-		String sql = "delete from booking where serial_number=?";
-		jdbcTemplate.update(sql, number);
-	}
 
 	@Override
 	public List<ReservationVO> getReservationCount(Date revDate) {
@@ -83,6 +78,19 @@ public class ReservationRepository implements IReservationRepository {
 				+ "from booking where booking_date=? group by  booking_date, booking_time "
 				+ "order by decode(booking_time, '런치1', 1, '런치2', 2, '디너1' ,3 , '디너2', 4)";
 		return jdbcTemplate.query(sql, new ReservationMapper(), revDate);
+	}
+
+	@Override
+	public void deleteReservation(int number, String phone) {
+		String sql="delete booking where serial_number=? and phone=?";
+		jdbcTemplate.update(sql,number,phone);
+		
+	}
+
+	@Override
+	public ReservationVO getReservationInfo(int number) {
+		String sql = "select *from booking where serial_number=?";
+		return jdbcTemplate.queryForObject(sql, new ReservationMapper1(),number);
 	}
 
 
