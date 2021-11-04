@@ -18,7 +18,7 @@
 		
 			<h1>${revList[0].name}님의예약 정보입니다.</h1>
 			<br>
-			<form action="delete" method="post">
+			<form action="update" method="post">
 			<table class="type09">
 				<tr>
 					<th>예약번호</th>
