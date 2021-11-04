@@ -31,7 +31,6 @@ public class AdminRepository implements IAdminRepository {
 	public boolean loginCheck(AdminVO admin) throws Exception {
 		String sql = "select admin_id from admin where admin_id = ? and admin_pw = ?";
 		AdminVO name = jdbcTemplate.queryForObject(sql, new AdminMapper(), admin.getAdminId(), admin.getAdminPw());
-		
 		return (name==null) ? false : true;
 	}
 

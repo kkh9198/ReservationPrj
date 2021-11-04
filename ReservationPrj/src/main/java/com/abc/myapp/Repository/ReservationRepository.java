@@ -34,6 +34,21 @@ public class ReservationRepository implements IReservationRepository {
 		}			
 	}
 	
+	// cnt를 가져올때 쓰는 매퍼
+	private class ReservationMapper_cnt implements RowMapper<ReservationVO> {
+		@Override
+		public ReservationVO mapRow(ResultSet rs, int rowNum) throws SQLException {
+			ReservationVO rev = new ReservationVO();
+//			rev.setName(rs.getString("name"));
+//			rev.setPhone(rs.getString("phone"));
+//			rev.setBookingDate(rs.getDate("booking_date"));
+//			rev.setBookingTime(rs.getString("booking_time"));
+			rev.setCnt(rs.getInt("cnt"));
+//			rev.setDetails(rs.getString("details"));
+			return rev;
+		}			
+	}
+	
 	// 
 	private class ReservationMapper1 implements RowMapper<ReservationVO> {
 		@Override
@@ -117,6 +132,19 @@ public class ReservationRepository implements IReservationRepository {
 				rev.getDetails(),
 				serialNumber
 				);
+	}
+
+	@Override
+	public int getAvailableCnt(ReservationVO rev, int targetNumber) {
+		String sql = "select cnt from ( select booking_date,booking_time,sum(cnt) as cnt from booking where booking_date=? and booking_time=? and serial_number != ? group by booking_date,booking_time )";
+		try {
+			ReservationVO sample = jdbcTemplate.queryForObject(sql, new ReservationMapper_cnt(),
+					rev.getBookingDate(), rev.getBookingTime(), targetNumber);
+			return sample.getCnt();
+		} catch (Exception e) {
+			return 0;
+		}	
+		
 	}
 	
 	

@@ -55,13 +55,22 @@ public class ReservationController {
 		return "reservation";
 	}
 	
-	// 예약 상세 정보 입력 후 예약 완료
+//	// 예약 상세 정보 입력 후 예약 완료 -- 인원 제한 기능 추가 전
+//	@RequestMapping(value = "/complete", method = RequestMethod.POST)
+//	public String complete(ReservationVO rev, Model model) {
+//		revService.insertReservation(rev);
+//		model.addAttribute("rev", rev);
+//		return "redirect:/";
+//	}
+	
+	// 예약 상세 정보 입력 후 예약 완료 -- 인원 제한 기능 추가 전
 	@RequestMapping(value = "/complete", method = RequestMethod.POST)
 	public String complete(ReservationVO rev, Model model) {
 		revService.insertReservation(rev);
 		model.addAttribute("rev", rev);
 		return "redirect:/";
 	}
+	
 	//예약 조회 
 	@RequestMapping(value = "/inform", method = RequestMethod.POST)
 	public String getReservation(String phone, Model model) {
@@ -142,14 +151,34 @@ public class ReservationController {
 		return "ureservation";
 	}
 	
-	// 예약 업데이이트 상세 정보 입력 후 업데이트 완료
+//	// 예약 업데이이트 상세 정보 입력 후 업데이트 완료 -- 인원제한 전 완성본
+//	@RequestMapping(value = "/updateComplete", method = RequestMethod.POST)
+//	public String updateComplete(ReservationVO rev, @RequestParam(value="targetNumber") int target, Model model) {
+//		int targetNumber = target;
+//		revService.getAvailableCnt(rev, targetNumber); // 테스트용이었음
+//		model.addAttribute("targetNumber", targetNumber);
+//		revService.updateReservation(rev, targetNumber);
+//		model.addAttribute("rev", rev);
+//		return "redirect:/";
+//	}
+	
+	// 인원 제한 확인 후  - 예약 업데이트 상세 정보 입력 후 업데이트 완료
 	@RequestMapping(value = "/updateComplete", method = RequestMethod.POST)
-	public String updateComplete(ReservationVO rev, @RequestParam(value="targetNumber") int target, Model model) {
-		int targetNumber = target;
+	public String updateComplete(ReservationVO rev, 
+			@RequestParam(value="targetNumber") int targetNumber,
+			@RequestParam(value="cnt") int cnt,
+			Model model) {
 		model.addAttribute("targetNumber", targetNumber);
-		revService.updateReservation(rev, targetNumber);
-		model.addAttribute("rev", rev);
-		return "redirect:/";
+		
+		int available_cnt = revService.getAvailableCnt(rev, targetNumber); // targetNumber에 해당하는 예약을 제외한 cnt 를 int로 받아옴
+		// T면 오류행 / F면 정상 업데이트
+		if (available_cnt + cnt <= 10) { // 받아온 cnt를 입력한 rev.cnt와 합쳐서 10이 넘는지 T/F반환
+			revService.updateReservation(rev, targetNumber);
+//			model.addAttribute("rev", rev);
+			return "redirect:/";
+		}else {
+			return "runtime";
+		}
 	}
 	
 //	@RequestMapping(value="/update", method=RequestMethod.GET)
