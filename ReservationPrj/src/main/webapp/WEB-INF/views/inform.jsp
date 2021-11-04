@@ -7,6 +7,7 @@
 <html>
 <link rel="stylesheet" type="text/css" href="/css/reservation.css">
 <head>
+<script type="text/javascript"></script>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
 
@@ -17,7 +18,7 @@
 		
 			<h1>${revList[0].name}님의예약 정보입니다.</h1>
 			<br>
-			<form action="update" method="post">
+			<form action="delete" method="post">
 			<table class="type09">
 				<tr>
 					<th>예약번호</th>
@@ -40,11 +41,11 @@
 						<td>${rev.bookingTime}</td>
 						<td>${rev.cnt}</td>
 						<td>${rev.details}</td>
-						<td><button>수정</button></td>
-						<!--  						
-						<td><a href="delete?number=${rev.serialNumber}">삭제하기</a></td>
-						-->
-						<td><button>삭제</button></td>
+						<td><button type="submit">수정</button></td>
+				
+						<td><button><a href="delete?number=${rev.serialNumber}">삭제</a></button></td>
+
+
 					</tr>
 				<input type="hidden" name="targetNumber" value="${rev.serialNumber}">
 				</c:forEach>
@@ -52,6 +53,12 @@
 			</form>
 		</div>
 	</div>
-	</div>
+	<script>
+		function submit2(frm){
+			frm.action = 'delete';
+			frm.submit();
+			return true;
+		}
+	</script>
 </body>
 </html>
