@@ -36,7 +36,7 @@
 
       	    <h1>상세 정보를 입력해주세요</h1><p>
       	    <div class="fade-in-box">
-            
+            <form action="complete" method="post">
             <table class="type10">
                 <tr>
                     <td>예약일 : </td>
@@ -104,16 +104,15 @@
                         <h6 id="modal_body5"></h6>
                         <h6 id="modal_body6"></h6>
 						<p>
-						<form action="complete" method="post">
-                        <button type="submit" class="btn btn-success btn-sm" data-toggle="modal"  data-target="#exampleModal" id="submit">
+						
+                        <input type="submit" class="btn btn-success btn-sm" data-toggle="modal"  data-target="#exampleModal" id="submit">
                    	   		 확인
-                        </button>
-                        </form>
+                        
                     </div>
                	</div>
             </div>
         </div>
-            
+            </form>
         	</div>
     	</div>
     </div>
