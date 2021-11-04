@@ -17,6 +17,7 @@
 		
 			<h1>${revList[0].name}님의예약 정보입니다.</h1>
 			<br>
+			<form action="update" method="post">
 			<table class="type09">
 				<tr>
 					<th>예약번호</th>
@@ -40,11 +41,15 @@
 						<td>${rev.cnt}</td>
 						<td>${rev.details}</td>
 						<td><button>수정</button></td>
+						<!--  						
 						<td><a href="delete?number=${rev.serialNumber}">삭제하기</a></td>
+						-->
+						<td><button>삭제</button></td>
 					</tr>
-
+				<input type="hidden" name="targetNumber" value="${rev.serialNumber}">
 				</c:forEach>
 			</table>
+			</form>
 		</div>
 	</div>
 	</div>

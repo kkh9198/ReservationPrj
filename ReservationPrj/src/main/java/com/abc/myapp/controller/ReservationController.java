@@ -83,6 +83,24 @@ public class ReservationController {
 		return "redirect:/";
 	}
 	
+	// 예약 수정버튼을 누르면 날짜 선택 페이지로
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public String update(@RequestParam(value = "targetNumber") int targetNumber, Model model) {
+		model.addAttribute("targetNumber", targetNumber);
+		return "udateselect";
+	}
+	
+	// 수정할 날짜 선택후 수정할 시간을 선택하는 페이지로 
+	@RequestMapping(value = "/updateTimeselect", method = RequestMethod.POST )
+	public String updateTime(@RequestParam(value="updateDate") Date date, @RequestParam(value="targetNumber") int target, Model model) {
+		Date updateDate = date;
+		int targetNumber = target;
+		model.addAttribute("updateDate", updateDate);
+		List<ReservationVO> revList = revService.getUpdateReservationCount(updateDate, targetNumber);
+		model.addAttribute("revList", revList);
+		return "utimeselect";
+	}
+	
 //	@RequestMapping(value="/update", method=RequestMethod.GET)
 //	public String updateEmp(int empid, Model model) {
 //		model.addAttribute("emp", empService.getEmpInfo(empid));

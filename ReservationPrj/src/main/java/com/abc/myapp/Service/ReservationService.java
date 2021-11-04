@@ -47,4 +47,9 @@ public class ReservationService implements IReservationService {
 		
 	}
 
+	@Override
+	public List<ReservationVO> getUpdateReservationCount(Date updateDate, int targetNumber) {
+		return reservationrepository.getUpdateReservationCount(updateDate, targetNumber);
+	}
+
 }

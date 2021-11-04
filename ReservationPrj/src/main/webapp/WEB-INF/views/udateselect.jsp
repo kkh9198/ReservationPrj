@@ -23,12 +23,14 @@ pageEncoding="UTF-8"%>
     <div id="jb-container">
         <div id="jb-header"  style="text-align: center;">
             <h1>변경하실 날짜를 선택해주세요<br></h1>
+            <h1>변경하는 예약번호는 ${targetNumber} 입니다.<br></h1>
             <div class="fade-in-box">
-         	<form action="timeselect" method="post">
+         	<form action="updateTimeselect" method="post">
+         		<input type="hidden" name="targetNumber" value="${targetNumber}">
 	        	<table class="type10">
 	         	<tr>
 	            	<td><label>날짜</label></td>
-	            	<td><input type="text" name="revDate" id="datePicker" autocomplete="off"></td>
+	            	<td><input type="text" name="updateDate" id="datePicker" autocomplete="off"></td>
 	         	</tr>
 	            </table><br>
                <input class ="button-base ripple" type="submit" value="선택">

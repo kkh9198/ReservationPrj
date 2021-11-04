@@ -27,7 +27,7 @@
                 <th>예약하기</th>
                 
                     <tr>
-                        <td rowspan="5">${revDate} </td>
+                        <td rowspan="5">${updateDate} </td>
                     </tr>
                     <tr>
                         <td>런치 1</td>

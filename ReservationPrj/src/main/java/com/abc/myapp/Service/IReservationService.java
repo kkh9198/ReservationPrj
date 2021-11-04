@@ -12,4 +12,5 @@ public interface IReservationService {
 	void deleteReservation(int number, String phone);
 	List<ReservationVO> getReservationCount(Date revDate);
 	ReservationVO getReservationInfo(int number);// 예약정보를 받아오는 메서드(serialnumber)
+	List<ReservationVO> getUpdateReservationCount(Date updateDate, int targetNumber);
 }
