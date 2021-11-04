@@ -25,7 +25,7 @@
 			<h1>관리자 페이지 입니다.<br>      
  			조회하실 날짜를 선택해주세요.</h1>
  			<div class="fade-in-box">
-			<form action="" method="post">
+			<form action="adminDetail" method="post">
 	            <table class="type10">
 	        	<tr>
 	            	<td><label>날짜</label></td>

@@ -16,6 +16,7 @@
 <body class="container">
     <div id="jb-container" >
         <div id="jb-header" style="text-align: center;">
+            <h1>${revDate}의 예약 목록입니다.<br></h1>
             <h1>예약 시간을 선택해주세요<br></h1>
         <div class="fade-in-box">
         <form action="reservation" method="post">
