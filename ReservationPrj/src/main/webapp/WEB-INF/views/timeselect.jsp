@@ -30,6 +30,7 @@
                     	<form action="reservation" method="post">
                         	<td>런치 1</td>
                         	<c:set var="data" value="no"/>
+                        	<c:set var="max" value="false"/>
                         	<c:forEach var="rev" items="${revList}">
                            		<c:choose>
                               	<c:when test="${rev.bookingTime=='런치1'}" >
@@ -37,6 +38,9 @@
                                  	<input type="hidden" name="cnt" value="${rev.cnt}">
                                  	<input type="hidden" name="revDate" value="${revDate}">
                                  	<c:set var="data" value="yes"/>
+                                 	<c:if test="${rev.cnt == '10' }">
+                                 		<c:set var = "max" value="true"/> 
+                                 	</c:if>
                               	</c:when>
                               	<c:otherwise>
                               	</c:otherwise>
@@ -48,7 +52,14 @@
                                 <input type="hidden" name="revDate" value="${revDate}">
                         	</c:if>
                         	<td>
-                        		<input class = "button-base ripple"  type="submit" name="time" value="런치1">
+                        		<c:choose>
+                        		<c:when test="${max == 'true'}">
+                        			<input class = "button-base ripple"  type="submit" name="time" value="예약불가" disabled="disabled">
+                        		</c:when>
+                        		<c:otherwise>
+                        			<input class = "button-base ripple"  type="submit" name="time" value="런치1">
+                        		</c:otherwise>
+                        		</c:choose>
                         	</td>
                         </form>
                     </tr>
@@ -57,6 +68,7 @@
                     	<form action="reservation" method="post">
                         <td>런치 2</td>
                         <c:set var="data" value="no"/>
+                        <c:set var="max" value="false"/>
                         <c:forEach var="rev" items="${revList}">
                            <c:choose>
                               <c:when test="${rev.bookingTime=='런치2'}">
@@ -64,6 +76,9 @@
                                  <input type="hidden" name="cnt" value="${rev.cnt}">
                                  <input type="hidden" name="revDate" value="${revDate}">
                                  <c:set var="data" value="yes"/>
+                                 <c:if test="${rev.cnt == '10' }">
+                                 	<c:set var = "max" value="true"/> 
+                                 </c:if>
                               </c:when>
                               <c:otherwise>
                               </c:otherwise>
@@ -75,7 +90,14 @@
 							<input type="hidden" name="revDate" value="${revDate}">
                         </c:if>                       
                         <td>
-                        	<input class = "button-base ripple"  type="submit" name="time" value="런치2">
+                        	<c:choose>
+                        	<c:when test="${mas == 'true'}">
+                        		<input class = "button-base ripple"  type="submit" name="time" value="예약불가" disabled="disabled">
+                        	</c:when>
+                        	<c:otherwise>
+                        		<input class = "button-base ripple"  type="submit" name="time" value="런치2">
+                        	</c:otherwise>
+                        	</c:choose>
                     	</td>
                     	</form>	
                     </tr>
@@ -84,6 +106,7 @@
                     	<form action="reservation" method="post">
                         <td>디너 1</td>
                         <c:set var="data" value="no"/>
+                        <c:set var="max" value="false"/>
                         <c:forEach var="rev" items="${revList}">
                            <c:choose>
                               <c:when test="${rev.bookingTime=='디너1'}">
@@ -91,6 +114,9 @@
                                  <input type="hidden" name="cnt" value="${rev.cnt}">
                                  <input type="hidden" name="revDate" value="${revDate}">
                                  <c:set var="data" value="yes"/>
+                                 <c:if test="${rev.cnt == '10' }">
+                                 	<c:set var = "max" value="true"/> 
+                                 </c:if>
                               </c:when>
                               <c:otherwise>
                               </c:otherwise>
@@ -102,8 +128,14 @@
 							<input type="hidden" name="revDate" value="${revDate}">
                         </c:if>                       
                         <td>
-                        	<input class = "button-base ripple"  type="submit" name="time" value="디너1">
-                        	
+                        	<c:choose>
+                        	<c:when test="${max == 'true'}">
+                        		<input class = "button-base ripple"  type="submit" name="time" value="예약불가" disabled="disabled">
+                        	</c:when>
+                        	<c:otherwise>
+                        		<input class = "button-base ripple"  type="submit" name="time" value="디너1">
+                        	</c:otherwise>
+                        	</c:choose>
                         </td>
                         </form>
                     </tr>
@@ -111,6 +143,7 @@
                     	<form action="reservation" method="post">
                         <td>디너 2</td>
                         <c:set var="data" value="no"/>
+                        <c:set var="max" value="false"/>
                         <c:forEach var="rev" items="${revList}">
                            <c:choose>
                               <c:when test="${rev.bookingTime=='디너2'}">
@@ -118,6 +151,9 @@
                                  <input type="hidden" name="cnt" value="${rev.cnt}">
                                  <input type="hidden" name="revDate" value="${revDate}">								
                                  <c:set var="data" value="yes"/>
+                                 <c:if test="${rev.cnt == '10' }">
+                                 	<c:set var = "max" value="true"/> 
+                                 </c:if>
                               </c:when>
                               <c:otherwise>
                               </c:otherwise>
@@ -129,7 +165,14 @@
 							<input type="hidden" name="revDate" value="${revDate}">
                         </c:if>                        
                         <td>
-                        	<input class = "button-base ripple"  type="submit" name="time" value="디너2">
+                        	<c:choose>
+                        	<c:when test="${max == 'true'}">
+                        		<input class = "button-base ripple"  type="submit" name="time" value="예약불가" disabled="disabled">
+                        	</c:when>
+                        	<c:otherwise>
+                        		<input class = "button-base ripple"  type="submit" name="time" value="디너2">
+                        	</c:otherwise>
+                        	</c:choose>
                         </td>
                         </form>
                     </tr>                    

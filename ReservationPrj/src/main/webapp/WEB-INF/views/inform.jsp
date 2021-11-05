@@ -18,7 +18,7 @@
 		
 			<h1>${revList[0].name}님의예약 정보입니다.</h1>
 			<br>
-			<form action="update" method="post">
+			
 			<table class="type09">
 				<tr>
 					<th>예약번호</th>
@@ -32,7 +32,7 @@
 					<th>예약 취소</th>
 				</tr>
 				<c:forEach var="rev" items="${revList}">
-			
+					
 					<tr>
 						<td>${rev.serialNumber}</td>
 						<td>${rev.name}</td>
@@ -41,20 +41,29 @@
 						<td>${rev.bookingTime}</td>
 						<td>${rev.cnt}</td>
 						<td>${rev.details}</td>
-						<td><button type="submit">수정</button></td>
-				
+						<form action="update" method="post">
+							<td><button type="submit">수정</button></td>
+							<input type="hidden" name="targetNumber" value="${rev.serialNumber}">
+							<input type="hidden" name="targetName" value="${rev.name}">
+							<input type="hidden" name="targetPhone" value="${rev.phone}">
+							<input type="hidden" name="targetCnt" value="${rev.cnt}">
+							<input type="hidden" name="targetDetails" value="${rev.details}">
+						</form>
+						<form action="delete">
+							<td><button type="submit">삭제</button></td>
+							<input type="hidden" name="number" value="${rev.serialNumber}">
+						</form>
+						
+						<!--  
 						<td><button><a href="delete?number=${rev.serialNumber}">삭제</a></button></td>
+						-->
+						
 
-
-					</tr>
-				<input type="hidden" name="targetNumber" value="${rev.serialNumber}">
-				<input type="hidden" name="targetName" value="${rev.name}">
-				<input type="hidden" name="targetPhone" value="${rev.phone}">
-				<input type="hidden" name="targetCnt" value="${rev.cnt}">
-				<input type="hidden" name="targetDetails" value="${rev.details}">
+				
 				</c:forEach>
+					</tr>
+					
 			</table>
-			</form>
 		</div>
 	</div>
 	<script>

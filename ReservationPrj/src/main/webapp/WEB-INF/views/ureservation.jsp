@@ -49,15 +49,15 @@
                 </tr>
                 <tr>
                     <td>예약자명 : </td>
-                    <td><input type="text" name="name" value="${targetName}" id="name"></td>
+                    <td><input type="text" name="name" value="${targetName}" id="name" required="required"></td>
                 </tr>
                 <tr>
                     <td>연락처 : </td>
-                    <td><input type="text" name="phone" value="${targetPhone}" pattern="^[0-9]+$" id="phone"></td>
+                    <td><input type="text" name="phone" value="${targetPhone}" pattern="^[0-9]+$" id="phone" required="required"></td>
                 </tr>
                 <tr>
                     <td>예약 인원 : </td>
-                    <td><input type="number" name="cnt" value="${targetCnt}" min="0" max="${10-cnt}" id="cnt"></td>
+                    <td><input type="number" name="cnt" value="${targetCnt}" min="1" max="${10-cnt}" id="cnt" required="required"></td>
                 </tr>
                 <tr>
                     <td>요청 사항 : </td>
