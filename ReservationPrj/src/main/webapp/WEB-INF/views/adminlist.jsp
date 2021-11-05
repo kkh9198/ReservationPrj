@@ -17,44 +17,53 @@
     <div id="jb-container" >
         <div id="jb-header" style="text-align: center;">
             <h1>${revDate}의 예약 목록입니다.<br></h1>
-            <h1>예약 시간을 선택해주세요<br></h1>
+            <h1>조회 할 예약 시간을 선택해주세요<br></h1>
         <div class="fade-in-box">
-        <form action="reservation" method="post">
-           <input type="hidden" name="revDate" value="${revDate}">
-            <table class="type09">
-                <th>날짜</th>
+<table class="type09">
+				<th>날짜</th>
                 <th>예약 타임</th>
                 <th>현재 예약 인원</th>
                 <th>조회하기</th>
-                
-                    <tr>
-                        <td rowspan="5">${revDate} </td>
+					<tr>
+						<td rowspan="5">${revDate} </td>
                     </tr>
                     <tr>
-                        <td>런치 1</td>
-                        <c:set var="data" value="no"/>
-                        <c:forEach var="rev" items="${revList}">
-                           <c:choose>
-                              <c:when test="${rev.bookingTime=='런치1'}" >
-                                 <td>${rev.cnt}</td>
-                                 <c:set var="data" value="yes"/>
-                              </c:when>
-                              <c:otherwise>
-                              </c:otherwise>
-                           </c:choose>
-                        </c:forEach>
-                        <c:if test="${data != 'yes'}">
-                           <td>0</td>
-                        </c:if>
-                        <td><input class = "button-base ripple"  type="submit" name="time" value=""></td>
+                    	<form action="detail" method="post">
+                        	<td>런치 1</td>
+                        	<c:set var="data" value="no"/>
+                        	<c:forEach var="rev" items="${revList}">
+                           		<c:choose>
+                              	<c:when test="${rev.bookingTime=='런치1'}" >
+                                	<td>${rev.cnt}</td>
+                                 	<input type="hidden" name="cnt" value="${rev.cnt}">
+                                 	<input type="hidden" name="revDate" value="${revDate}">
+                                 	<c:set var="data" value="yes"/>
+                              	</c:when>
+                              	<c:otherwise>
+                              	</c:otherwise>
+                           		</c:choose>
+                        	</c:forEach>
+                        	<c:if test="${data != 'yes'}">
+                           		<td>0</td>
+                           		<input type="hidden" name="cnt" value="0">
+                                <input type="hidden" name="revDate" value="${revDate}">
+                        	</c:if>
+                        	<td>
+                        		<input class = "button-base ripple"  type="submit" name="time" value="런치1">
+                        	</td>
+                        </form>
                     </tr>
+                    
                     <tr>
+                    	<form action="detail" method="post">
                         <td>런치 2</td>
                         <c:set var="data" value="no"/>
                         <c:forEach var="rev" items="${revList}">
                            <c:choose>
                               <c:when test="${rev.bookingTime=='런치2'}">
                                  <td>${rev.cnt}</td>
+                                 <input type="hidden" name="cnt" value="${rev.cnt}">
+                                 <input type="hidden" name="revDate" value="${revDate}">
                                  <c:set var="data" value="yes"/>
                               </c:when>
                               <c:otherwise>
@@ -63,16 +72,25 @@
                         </c:forEach>
                         <c:if test="${data != 'yes'}">
                            <td>0</td>
+							<input type="hidden" name="cnt" value="0">
+							<input type="hidden" name="revDate" value="${revDate}">
                         </c:if>                       
-                        <td><input class = "button-base ripple"  type="submit" name="time" value=""></td>
+                        <td>
+                        	<input class = "button-base ripple"  type="submit" name="time" value="런치2">
+                    	</td>
+                    	</form>	
                     </tr>
+                    
                     <tr>
+                    	<form action="detail" method="post">
                         <td>디너 1</td>
                         <c:set var="data" value="no"/>
                         <c:forEach var="rev" items="${revList}">
                            <c:choose>
                               <c:when test="${rev.bookingTime=='디너1'}">
                                  <td>${rev.cnt}</td>
+                                 <input type="hidden" name="cnt" value="${rev.cnt}">
+                                 <input type="hidden" name="revDate" value="${revDate}">
                                  <c:set var="data" value="yes"/>
                               </c:when>
                               <c:otherwise>
@@ -81,16 +99,25 @@
                         </c:forEach>
                         <c:if test="${data != 'yes'}">
                            <td>0</td>
+                           <input type="hidden" name="cnt" value="0">
+							<input type="hidden" name="revDate" value="${revDate}">
                         </c:if>                       
-                        <td><input class = "button-base ripple"  type="submit" name="time" value=""></td>
+                        <td>
+                        	<input class = "button-base ripple"  type="submit" name="time" value="디너1">
+                        	
+                        </td>
+                        </form>
                     </tr>
                     <tr>
+                    	<form action="detail" method="post">
                         <td>디너 2</td>
                         <c:set var="data" value="no"/>
                         <c:forEach var="rev" items="${revList}">
                            <c:choose>
                               <c:when test="${rev.bookingTime=='디너2'}">
                                  <td>${rev.cnt}</td>
+                                 <input type="hidden" name="cnt" value="${rev.cnt}">
+                                 <input type="hidden" name="revDate" value="${revDate}">								
                                  <c:set var="data" value="yes"/>
                               </c:when>
                               <c:otherwise>
@@ -99,11 +126,15 @@
                         </c:forEach>
                         <c:if test="${data != 'yes'}">
                            <td>0</td>
+                           <input type="hidden" name="cnt" value="0">
+							<input type="hidden" name="revDate" value="${revDate}">
                         </c:if>                        
-                        <td><input class = "button-base ripple"  type="submit" name="time" value=""></td>
+                        <td>
+                        	<input class = "button-base ripple"  type="submit" name="time" value="디너2">
+                        </td>
+                        </form>
                     </tr>                    
-            </table>
-        </form>
+            </table>			
         </div>
     </div>
 </div>

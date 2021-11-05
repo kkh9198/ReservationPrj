@@ -1,10 +1,14 @@
 package com.abc.myapp.Service;
 
+import java.sql.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.abc.myapp.Repository.AdminRepository;
 import com.abc.myapp.model.AdminVO;
+import com.abc.myapp.model.ReservationVO;
 
 @Service
 public class AdminService implements IAdminService {
@@ -21,5 +25,10 @@ public class AdminService implements IAdminService {
 //	        session.setAttribute("admin_pw", admin.getAdminPw());
 //	    }		
 	    return result;
+	}
+
+	@Override
+	public List<ReservationVO> getReservation(Date date, String time) {
+		return adminrepository.getReservation(date, time);	
 	}
 }

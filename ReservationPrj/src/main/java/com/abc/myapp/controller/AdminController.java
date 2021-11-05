@@ -51,7 +51,7 @@ public class AdminController {
 		return "admin";
 	}
 	
-	// 날짜 선택 페이지에서 디테일 페이지로 보내기
+	// 날짜 선택 페이지에서 시간선택 페이지로 보내기
 	@RequestMapping(value = "/adminDetail", method = RequestMethod.POST)
 	public String adminDetail(@RequestParam(value="revDate") Date date, Model model) {
 		Date revDate = date;
@@ -61,6 +61,13 @@ public class AdminController {
 		return "adminlist";
 	}
 	
-	//디테일 페이지에서 시간별로 조회페이지로 보내기
-	
+	//시간별조회 페이지에서 시간별로 디테일 조회페이지로 보내기
+	@RequestMapping(value = "/detail", method = RequestMethod.POST)
+	public String timeDetail(@RequestParam(value = "revDate") Date date,
+			@RequestParam(value = "time") String time,
+			Model model) {
+		List<ReservationVO> revList = adminservice.getReservation(date, time);
+		model.addAttribute("revList", revList);
+		return "admindetails";
+	}
 }
