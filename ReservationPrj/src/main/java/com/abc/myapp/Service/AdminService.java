@@ -3,6 +3,8 @@ package com.abc.myapp.Service;
 import java.sql.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,13 +20,13 @@ public class AdminService implements IAdminService {
 	
 	
 	@Override
-	public boolean loginCheck(AdminVO admin) throws Exception {
+	public boolean loginCheck(AdminVO admin, HttpSession session) throws Exception {
 		boolean result = adminrepository.loginCheck(admin);
-//		//로그인 성공
-//		if(result) {
-//			session.setAttribute("admin_id", admin.getAdminId());
-//	        session.setAttribute("admin_pw", admin.getAdminPw());
-//	    }		
+		//로그인 성공
+		if(result) {
+			session.setAttribute("adminId", admin.getAdminId());
+	        session.setAttribute("adminPw", admin.getAdminPw());
+	    }		
 	    return result;
 	}
 

@@ -3,6 +3,8 @@ package com.abc.myapp.controller;
 import java.sql.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,13 +31,20 @@ public class AdminController {
 		return "admin";
 	}
 	
+	// 메인페이지에서 관리자 로그아웃 버튼 클릭
+	@RequestMapping(value = "/adminLogout")
+	public String adminLogout(HttpSession session) {
+		session.invalidate();	
+		return "redirect:/";
+	}
+	
 	// 관리자 로그인페이지에서 로그인 체크
 	@RequestMapping(value = "/adminOK", method = RequestMethod.POST)
-	public String adminOK(AdminVO admin) throws Exception {
+	public String adminOK(AdminVO admin, HttpSession session) throws Exception {
 		try {
-			boolean result = adminservice.loginCheck(admin); // 로그인 체크 메서드 실행
+			boolean result = adminservice.loginCheck(admin, session); // 로그인 체크 메서드 실행
 			if (result) {	// 성공시
-				return "admindate";	// 날짜 선택 페이지로
+				return "main";	// 메인페이지
 			}
 		} catch (Exception e) {	// 실패시
 			return "redirect:adminNo";	// 로그인 실패를 띄우는 로그인창으로
@@ -49,6 +58,11 @@ public class AdminController {
 		String fail = "fail";
 		model.addAttribute("fail", fail);
 		return "admin";
+	}
+	
+	@RequestMapping("adminDate")
+	public String adminDate() {
+		return "admindate";
 	}
 	
 	// 날짜 선택 페이지에서 시간선택 페이지로 보내기
