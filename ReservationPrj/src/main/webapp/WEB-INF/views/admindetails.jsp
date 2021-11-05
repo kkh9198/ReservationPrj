@@ -78,6 +78,10 @@
 					</tr>
 					
 			</table>
+			<p>
+				<form action="main">
+					<button class="btn btn-primary btn-sm">홈으로</button>
+				</form>
 		</div>
 	</div>
 </body>

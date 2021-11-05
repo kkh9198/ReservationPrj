@@ -9,7 +9,6 @@
 <head>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
-
 <!-- Favicon -->
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript"></script>
@@ -27,10 +26,8 @@
             </c:if>
          아이디: <input type="text" name="adminId"><br>
          비밀번호 : <input type="password" name="adminPw"> <br><br>
-         <input class ="button-base ripple" type="submit" value="확인"> <input class ="button-base ripple" type="reset" value="취소">
+         <input class ="button-base ripple" type="submit" value="확인"></form> <form action="main"><input class ="button-base ripple" type="submit" value="취소"></form>
         </div>
     </div>
-    </form>
-    
-</body>
+
 </html>

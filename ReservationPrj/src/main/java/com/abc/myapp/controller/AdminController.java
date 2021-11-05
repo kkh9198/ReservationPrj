@@ -44,7 +44,7 @@ public class AdminController {
 		try {
 			boolean result = adminservice.loginCheck(admin, session); // 로그인 체크 메서드 실행
 			if (result) {	// 성공시
-				return "main";	// 메인페이지
+				return "redirect:/";	// 메인페이지
 			}
 		} catch (Exception e) {	// 실패시
 			return "redirect:adminNo";	// 로그인 실패를 띄우는 로그인창으로
