@@ -1,6 +1,8 @@
 package com.abc.myapp.controller;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +41,7 @@ public class ReservationController {
 	@RequestMapping(value = "/timeselect", method = RequestMethod.POST )
 	public String time(@RequestParam(value="revDate") Date date, Model model) {
 		Date revDate = date;
+//		System.out.println(LocalDate.now());
 		model.addAttribute("revDate", revDate);
 		List<ReservationVO> revList = revService.getReservationCount(revDate);
 		model.addAttribute("revList", revList);
@@ -95,6 +98,11 @@ public class ReservationController {
 	public String getReservation(@RequestParam(value = "revPhone") String phone, Model model) {
 		List<ReservationVO> revList = revService.getReservation(phone);
 		model.addAttribute("revList", revList);
+		// 오늘날짜를 받아옴
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		String ss=sdf.format(new java.util.Date());
+		java.sql.Date today= java.sql.Date.valueOf(ss);
+		model.addAttribute("today", today);
 		return "inform";
 	}
 

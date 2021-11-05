@@ -35,7 +35,7 @@
 <body class="container">
     <div id="jb-container" style="align-content: center;">
         <div id="jb-header"  style="text-align: center;">
-            <h1>${revList[0].bookingDate} / ${revList[0].bookingTime}의 상세 정보입니다.</h1>
+            <h1>${revList[0].bookingDate} / ${revList[0].bookingTime} 의 상세 정보입니다.</h1>
             <br>
             <p>
 			<table class="type09">
@@ -61,17 +61,32 @@
 						<td>${rev.cnt}</td>
 						<td>${rev.details}</td>
 						<form action="update" method="post">
-							<td><button class="btn btn-primary btn-sm" type="submit">수정</button></td>
-							<input type="hidden" name="targetNumber" value="${rev.serialNumber}">
-							<input type="hidden" name="targetName" value="${rev.name}">
-							<input type="hidden" name="targetPhone" value="${rev.phone}">
-							<input type="hidden" name="targetCnt" value="${rev.cnt}">
-							<input type="hidden" name="targetDetails" value="${rev.details}">
+							<c:choose>
+							<c:when test="${today > rev.bookingDate }">
+								<td><button class="btn btn-primary btn-sm" type="submit" disabled>수정</button></td>
+							</c:when>
+							<c:otherwise>
+								<td><button class="btn btn-primary btn-sm" type="submit">수정</button></td>
+								<input type="hidden" name="targetNumber" value="${rev.serialNumber}">
+								<input type="hidden" name="targetName" value="${rev.name}">
+								<input type="hidden" name="targetPhone" value="${rev.phone}">
+								<input type="hidden" name="targetCnt" value="${rev.cnt}">
+								<input type="hidden" name="targetDetails" value="${rev.details}">							
+							</c:otherwise>
+							</c:choose>
 						</form>
 						<form action="delete" method="post">
-							<td><button class="btn btn-primary btn-sm" type="submit">삭제</button></td>
-							<input type="hidden" name="number" value="${rev.serialNumber}">
-							<input type="hidden" name="targetPhone" value="${rev.phone}">
+							<c:choose>
+							<c:when test="${today > rev.bookingDate }">
+								<td><button class="btn btn-primary btn-sm" type="submit" disabled="disabled">삭제</button></td>
+							</c:when>
+							<c:otherwise>
+								<td><button class="btn btn-primary btn-sm" type="submit">삭제</button></td>
+								<input type="hidden" name="number" value="${rev.serialNumber}">
+								<input type="hidden" name="targetPhone" value="${rev.phone}">						
+							</c:otherwise>
+							</c:choose>						
+
 						</form>
 
 				</c:forEach>

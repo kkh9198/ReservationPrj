@@ -1,6 +1,7 @@
 package com.abc.myapp.controller;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -83,6 +84,11 @@ public class AdminController {
 			Model model) {
 		List<ReservationVO> revList = adminservice.getReservation(date, time);
 		model.addAttribute("revList", revList);
+		// 오늘날짜를 받아옴
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		String ss=sdf.format(new java.util.Date());
+		java.sql.Date today= java.sql.Date.valueOf(ss);
+		model.addAttribute("today", today);
 		return "admindetails";
 	}
 }
