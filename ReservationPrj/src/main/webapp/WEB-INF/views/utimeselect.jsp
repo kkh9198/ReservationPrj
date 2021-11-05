@@ -34,7 +34,7 @@
                            		<c:choose>
                               	<c:when test="${rev.bookingTime=='런치1'}" >
                                 	<td>${rev.cnt}</td>
-                                 	<input type="hidden" name="cnt" value="0">
+                                 	<input type="hidden" name="cnt" value="${rev.cnt}">
                                  	<input type="hidden" name="revDate" value="${revDate}">
                                  	<input type="hidden" name="updateDate" value="${updateDate}">
 									<input type="hidden" name="targetNumber" value="${targetNumber}">
