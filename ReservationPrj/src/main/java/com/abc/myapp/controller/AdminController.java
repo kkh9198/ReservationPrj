@@ -60,6 +60,7 @@ public class AdminController {
 		return "admin";
 	}
 	
+	// 관리자 메뉴에서 날짜로 조회페이지
 	@RequestMapping("adminDate")
 	public String adminDate() {
 		return "admindate";

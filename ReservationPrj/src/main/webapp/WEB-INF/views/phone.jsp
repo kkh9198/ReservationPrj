@@ -38,7 +38,7 @@
         <div id="jb-header"  style="text-align: center;">
            <h1>핸드폰 번호를 입력해주세요</h1><br>
             <p>
-                <input type="text" name = "phone">
+                <input type="text" name = "revPhone">
 				<input class="btn btn-primary btn-sm" type="submit" value="확인">
         </div>
 

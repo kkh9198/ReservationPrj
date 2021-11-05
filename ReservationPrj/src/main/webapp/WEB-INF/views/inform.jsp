@@ -69,9 +69,10 @@
 							<input type="hidden" name="targetCnt" value="${rev.cnt}">
 							<input type="hidden" name="targetDetails" value="${rev.details}">
 						</form>
-						<form action="delete">
+						<form action="delete" method="post">
 							<td><button class="btn btn-primary btn-sm" type="submit">삭제</button></td>
 							<input type="hidden" name="number" value="${rev.serialNumber}">
+							<input type="hidden" name="targetPhone" value="${rev.phone}">
 						</form>
 
 				</c:forEach>

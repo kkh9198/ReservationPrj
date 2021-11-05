@@ -68,7 +68,7 @@ public class ReservationController {
 		return "result";
 	}
 	
-	// 예약 상세 정보 입력 후 예약 완료 -- 인원 제한 기능 추가 전
+	// 완료 페이지에서 메인으로 보내기
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String result() {
 		return "redirect:/";
@@ -92,24 +92,41 @@ public class ReservationController {
 //	
 	//예약 조회 
 	@RequestMapping(value = "/inform", method = RequestMethod.POST)
-	public String getReservation(String phone, Model model) {
+	public String getReservation(@RequestParam(value = "revPhone") String phone, Model model) {
 		List<ReservationVO> revList = revService.getReservation(phone);
 		model.addAttribute("revList", revList);
 		return "inform";
 	}
-	//GET으로 삭제 요청
-	@RequestMapping(value="/delete", method=RequestMethod.GET)
-	public String delete(int number, Model model) {
+
+	// 상세조회에서 삭제페이지로 이동
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public String delete(@RequestParam("number") int number,
+			@RequestParam("targetPhone") String phone,
+			Model model) {
 		model.addAttribute("rev", revService.getReservationInfo(number));
 		return "deleteform";
 	}
-
-	//POST으로 삭제 요청
-	@RequestMapping(value="/delete", method=RequestMethod.POST)
-	public String delete(int number,String phone) {
-		revService.deleteReservation(number, phone);
-		return "dresult";
+	
+	// 삭제페이지에서 삭제완료하고 결과창으로 이동
+	@RequestMapping(value = "/deleteresult", method=RequestMethod.POST)
+	public String deleteResult(@RequestParam("number") int number,
+			@RequestParam("phone") String phone,
+			@RequestParam("revPhone") String revPhone,
+			Model model) {
+		if(phone == revPhone) {
+			revService.deleteReservation(number, phone);
+			return "dresult";
+		}else {
+			model.addAttribute("rev", revService.getReservationInfo(number));
+			return "deleteform";
+		}
 	}
+	
+	@RequestMapping(value="/deletefail")
+	public String redelete() {
+		return "deleteform";
+	}
+	
 	
 	// 예약 수정버튼을 누르면 날짜 선택 페이지로
 	@RequestMapping(value="/update", method=RequestMethod.POST)

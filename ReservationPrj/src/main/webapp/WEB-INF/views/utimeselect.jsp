@@ -96,7 +96,7 @@
 									</c:when>
 									<c:otherwise>
 										<input class="btn btn-primary btn-sm" type="submit" name="time"
-											value="예약">
+											value="런치1">
 									</c:otherwise>
 								</c:choose></td>
 						</form>
@@ -149,7 +149,7 @@
 									</c:when>
 									<c:otherwise>
 										<input class="btn btn-primary btn-sm" type="submit" name="time"
-											value="예약">
+											value="런치2">
 									</c:otherwise>
 								</c:choose></td>
 						</form>
@@ -202,7 +202,7 @@
 									</c:when>
 									<c:otherwise>
 										<input class="btn btn-primary btn-sm" type="submit" name="time"
-											value="예약">
+											value="디너1">
 									</c:otherwise>
 								</c:choose></td>
 						</form>
@@ -254,7 +254,7 @@
 									</c:when>
 									<c:otherwise>
 										<input class="btn btn-primary btn-sm" type="submit" name="time"
-											value="예약">
+											value="디너2">
 									</c:otherwise>
 								</c:choose></td>
 						</form>

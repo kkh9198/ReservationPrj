@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,11 +29,11 @@
 <link href="css/reservation.css" rel="stylesheet">
 </head>
 <body class="container">
-    <div id="jb-container">
-        <div id="jb-header"  style="text-align: center;">
-	<h1>삭제가 완료되었습니다.</h1>
-	<form action="main">
-	<button class="btn btn-primary btn-sm">홈으로</button>
-	</form>
+	<div id="jb-container">
+		<div id="jb-header" style="text-align: center;">
+			<h1>삭제가 완료되었습니다.</h1>
+			<form action="main">
+				<button class="btn btn-primary btn-sm">홈으로</button>
+			</form>
 </body>
 </html>

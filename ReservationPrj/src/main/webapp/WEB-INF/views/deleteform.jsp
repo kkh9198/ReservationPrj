@@ -42,11 +42,17 @@
 			<h1>예약정보 삭제</h1>
 			${rev.name} 고객님의 ${rev.serialNumber}번 예약의 정보를 취소합니다.
 			<p>취소를 원하시면 고객님의 핸드폰번호를 입력하세요.
-			<form action="./delete" method="post">
-				핸드폰번호 : <input type="text" name="phone" value=${rev.phone}>
+			<form action="deleteresult" method="post">
+				<input type="hidden" name = "revPhone" value="${rev.phone}">
+				핸드폰번호 : <input type="text" name="phone" value="${rev.phone}">
 				<input type="hidden" name="number" value="${rev.serialNumber}">
 				<input type="submit" class="btn btn-success btn-sm" value="삭제">
 			</form>
+			<form action="inform" method="post">
+				<input type="hidden" name = "revPhone" value="${rev.phone}">
+				<input type="submit" class="btn btn-success btn-sm" value="목록으로 돌아가기">
+			</form>
+			
 		</div>
 	</div>
 	<script type="text/javascript">
