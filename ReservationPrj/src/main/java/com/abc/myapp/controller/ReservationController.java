@@ -60,30 +60,34 @@ public class ReservationController {
 		return "reservation";
 	}
 	
-//	// 예약 상세 정보 입력 후 예약 완료 -- 인원 제한 기능 추가 전
-//	@RequestMapping(value = "/complete", method = RequestMethod.POST)
-//	public String complete(ReservationVO rev, Model model) {
-//		revService.insertReservation(rev);
-//		model.addAttribute("rev", rev);
-//		return "redirect:/";
-//	}
-	
-	// 예약 상세 정보 입력 후 예약 완료 
+	// 예약 상세 정보 입력 후 예약 완료 -- 인원 제한 기능 추가 전
 	@RequestMapping(value = "/complete", method = RequestMethod.POST)
-	public String complete(ReservationVO rev,
-			@RequestParam(value="cnt") int cnt,
-			Model model) {
-		int available_cnt = revService.getAvailableCnt(rev); // targetNumber에 해당하는 예약을 제외한 cnt 를 int로 받아옴
-		// T면 오류행 / F면 정상 업데이트
-		if (available_cnt + cnt <= 10) { // 받아온 cnt를 입력한 rev.cnt와 합쳐서 10이 넘는지 T/F반환
-			revService.insertReservation(rev);
-//			model.addAttribute("rev", rev);
-			return "redirect:/";
-		}else {
-			return "redirect:/";
-		}
+	public String complete() {
+		return "result";
 	}
 	
+	// 예약 상세 정보 입력 후 예약 완료 -- 인원 제한 기능 추가 전
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String result() {
+		return "main";
+	}
+	
+//	// 예약 상세 정보 입력 후 예약 완료 
+//	@RequestMapping(value = "/complete", method = RequestMethod.POST)
+//	public String complete(ReservationVO rev,
+//			@RequestParam(value="cnt") int cnt,
+//			Model model) {
+//		int available_cnt = revService.getAvailableCnt(rev); // targetNumber에 해당하는 예약을 제외한 cnt 를 int로 받아옴
+//		// T면 오류행 / F면 정상 업데이트
+//		if (available_cnt + cnt <= 10) { // 받아온 cnt를 입력한 rev.cnt와 합쳐서 10이 넘는지 T/F반환
+//			revService.insertReservation(rev);
+////			model.addAttribute("rev", rev);
+//			return "redirect:/";
+//		}else {
+//			return "redirect:/";
+//		}
+//	}
+//	
 	//예약 조회 
 	@RequestMapping(value = "/inform", method = RequestMethod.POST)
 	public String getReservation(String phone, Model model) {
@@ -102,7 +106,7 @@ public class ReservationController {
 	@RequestMapping(value="/delete", method=RequestMethod.POST)
 	public String delete(int number,String phone) {
 		revService.deleteReservation(number, phone);
-		return "redirect:/";
+		return "dresult";
 	}
 	
 	// 예약 수정버튼을 누르면 날짜 선택 페이지로
@@ -190,7 +194,7 @@ public class ReservationController {
 		if (available_cnt + cnt <= 10) { // 받아온 cnt를 입력한 rev.cnt와 합쳐서 10이 넘는지 T/F반환
 			revService.updateReservation(rev, targetNumber);
 //			model.addAttribute("rev", rev);
-			return "redirect:/";
+			return "uresult";
 		}else {
 			return "runtime";
 		}
