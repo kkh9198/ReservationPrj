@@ -113,7 +113,7 @@ public class ReservationController {
 			@RequestParam("phone") String phone,
 			@RequestParam("revPhone") String revPhone,
 			Model model) {
-		if(phone == revPhone) {
+		if(phone.equals(revPhone)) {
 			revService.deleteReservation(number, phone);
 			return "dresult";
 		}else {
@@ -121,12 +121,6 @@ public class ReservationController {
 			return "deleteform";
 		}
 	}
-	
-	@RequestMapping(value="/deletefail")
-	public String redelete() {
-		return "deleteform";
-	}
-	
 	
 	// 예약 수정버튼을 누르면 날짜 선택 페이지로
 	@RequestMapping(value="/update", method=RequestMethod.POST)

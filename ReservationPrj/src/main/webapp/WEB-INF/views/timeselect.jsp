@@ -111,7 +111,7 @@
                         </c:if>                       
                         <td>
                         	<c:choose>
-                        	<c:when test="${mas == 'true'}">
+                        	<c:when test="${max == 'true'}">
                         		<input class = "btn btn-primary btn-sm"  type="submit" name="time" value="예약불가" disabled="disabled">
                         	</c:when>
                         	<c:otherwise>
