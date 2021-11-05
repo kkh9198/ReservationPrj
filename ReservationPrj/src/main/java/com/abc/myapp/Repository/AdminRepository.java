@@ -47,13 +47,15 @@ public class AdminRepository implements IAdminRepository {
 		}			
 	}
 	
+	// 로그인 체크 - db에서 문자열 비교
 	@Override
 	public boolean loginCheck(AdminVO admin) throws Exception {
 		String sql = "select admin_id from admin where admin_id = ? and admin_pw = ?";
 		AdminVO name = jdbcTemplate.queryForObject(sql, new AdminMapper(), admin.getAdminId(), admin.getAdminPw());
 		return (name==null) ? false : true;
 	}
-
+	
+	// 관리자 조회에서 날짜, 시간으로 예약정보 모두 불러오는 메서드
 	@Override
 	public List<ReservationVO> getReservation(Date date, String time) {
 		String sql = "select name, phone, booking_date,booking_time,cnt,details,serial_number from booking where booking_date=? and booking_time=?";

@@ -62,14 +62,16 @@ public class ReservationController {
 	
 	// 예약 상세 정보 입력 후 예약 완료 -- 인원 제한 기능 추가 전
 	@RequestMapping(value = "/complete", method = RequestMethod.POST)
-	public String complete() {
+	public String complete(ReservationVO rev, Model model) {
+		revService.insertReservation(rev);
+		model.addAttribute("rev", rev);
 		return "result";
 	}
 	
 	// 예약 상세 정보 입력 후 예약 완료 -- 인원 제한 기능 추가 전
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String result() {
-		return "main";
+		return "redirect:/";
 	}
 	
 //	// 예약 상세 정보 입력 후 예약 완료 

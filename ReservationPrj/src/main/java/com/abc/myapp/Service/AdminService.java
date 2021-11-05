@@ -16,6 +16,7 @@ public class AdminService implements IAdminService {
 	@Autowired
 	AdminRepository adminrepository;
 	
+	
 	@Override
 	public boolean loginCheck(AdminVO admin) throws Exception {
 		boolean result = adminrepository.loginCheck(admin);
