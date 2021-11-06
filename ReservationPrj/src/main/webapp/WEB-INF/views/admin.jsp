@@ -15,7 +15,7 @@
 
 </head>
 <body>
-	<form action="adminOK" method="post">
+	
 		<div id="jb-container" style="text-align: center;">
    			<jsp:include page="top.jsp" flush="false"/>
    		</div>
@@ -26,6 +26,7 @@
                로그인실패입니다.<br>
                다시 아이디와 비밀번호를 입력하세요<br>
 					</c:if>
+					<form action="adminOK" method="post">
 					아이디: <input type="text" name="adminId"><br> 비밀번호 : <input
 						type="password" name="adminPw"> <br> <br> <input
 						class="button-base ripple" type="submit" value="확인">
