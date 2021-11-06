@@ -32,8 +32,10 @@
     </script>
 <link href="css/reservation.css" rel="stylesheet">
 </head>
-<body class="container">
-    <div id="jb-container" style="align-content: center;">
+<body>
+    <div id="jb-container" style="text-align: center;">
+   		<jsp:include page="top.jsp" flush="false"/>
+    </div>
         <div id="jb-header"  style="text-align: center;">
             <h1>${revList[0].bookingDate} / ${revList[0].bookingTime} 의 상세 정보입니다.</h1>
             <br>
@@ -94,6 +96,11 @@
 					<button class="btn btn-primary btn-sm">홈으로</button>
 				</form>
 		</div>
-	</div>
 </body>
+<br>
+<footer>
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="footer.jsp" flush="false"/>
+    </div>
+</footer>
 </html>

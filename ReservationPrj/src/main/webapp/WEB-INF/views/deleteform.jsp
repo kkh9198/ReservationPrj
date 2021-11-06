@@ -37,7 +37,9 @@
 <link href="css/reservation.css" rel="stylesheet">
 </head>
 <body class="container">
-	<div id="jb-container" style="align-content: center;">
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="top.jsp" flush="false"/>
+    </div>
 		<div id="jb-header" style="text-align: center;">
 			<h1>예약정보 삭제</h1>
 			${rev.name} 고객님의 ${rev.serialNumber}번 예약의 정보를 취소합니다.
@@ -62,4 +64,10 @@
 		}
 	</script>
 </body>
+<br>
+<footer>
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="footer.jsp" flush="false"/>
+    </div>
+</footer>
 </html>

@@ -34,7 +34,9 @@
 </head>
 
 <body class="container">
-	<div id="jb-container" >
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="top.jsp" flush="false"/>
+    </div>
 		<div id="jb-header" style="text-align: center;">
 			<h1>예약 시간을 선택해주세요<br></h1>
         <div class="fade-in-box">
@@ -44,11 +46,14 @@
                 <th>현재 예약 인원</th>
                 <th>예약하기</th>
 					<tr>
-						<td rowspan="5">${revDate} </td>
+						<td rowspan="5">
+							${revDate}<p>
+							타임당 10인
+						</td>
                     </tr>
                     <tr>
                     	<form action="reservation" method="post">
-                        	<td>런치 1</td>
+                        	<td>런치 1 (12:00~13:00)</td>
                         	<c:set var="data" value="no"/>
                         	<c:set var="max" value="false"/>
                         	<c:forEach var="rev" items="${revList}">
@@ -86,7 +91,7 @@
                     
                     <tr>
                     	<form action="reservation" method="post">
-                        <td>런치 2</td>
+                        <td>런치 2 (13:00~14:00)</td>
                         <c:set var="data" value="no"/>
                         <c:set var="max" value="false"/>
                         <c:forEach var="rev" items="${revList}">
@@ -124,7 +129,7 @@
                     
                     <tr>
                     	<form action="reservation" method="post">
-                        <td>디너 1</td>
+                        <td>디너 1 (18:00~19:00)</td>
                         <c:set var="data" value="no"/>
                         <c:set var="max" value="false"/>
                         <c:forEach var="rev" items="${revList}">
@@ -161,7 +166,7 @@
                     </tr>
                     <tr>
                     	<form action="reservation" method="post">
-                        <td>디너 2</td>
+                        <td>디너 2 (19:00~20:00)</td>
                         <c:set var="data" value="no"/>
                         <c:set var="max" value="false"/>
                         <c:forEach var="rev" items="${revList}">
@@ -199,7 +204,11 @@
             </table>
         </div>
     </div>
-</div>
 </body>
-
+<br>
+<footer>
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="footer.jsp" flush="false"/>
+    </div>
+</footer>
 </html>

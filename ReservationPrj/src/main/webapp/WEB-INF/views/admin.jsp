@@ -14,9 +14,11 @@
 <script type="text/javascript"></script>
 
 </head>
-<body class="container">
+<body>
 	<form action="adminOK" method="post">
-		<div id="jb-container" style="align-content: center;">
+		<div id="jb-container" style="text-align: center;">
+   			<jsp:include page="top.jsp" flush="false"/>
+   		</div>
 			<div id="jb-header" style="text-align: center;">
 				관리자 로그인 페이지입니다.<br>
 				<p>
@@ -27,11 +29,16 @@
 					아이디: <input type="text" name="adminId"><br> 비밀번호 : <input
 						type="password" name="adminPw"> <br> <br> <input
 						class="button-base ripple" type="submit" value="확인">
-	</form>
-	<form action="main">
-		<input class="button-base ripple" type="submit" value="취소">
-	</form>
-	</div>
-	</div>
+			</form>
+			<form action="main">
+				<input class="button-base ripple" type="submit" value="취소">
+			</form>
+			</div>
 </body>
+<br>
+<footer>
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="footer.jsp" flush="false"/>
+    </div>
+</footer>
 </html>

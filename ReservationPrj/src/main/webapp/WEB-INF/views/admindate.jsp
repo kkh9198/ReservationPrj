@@ -20,7 +20,9 @@
 
 </head>
 <body class="container">
-	<div id="jb-container">
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="top.jsp" flush="false"/>
+    </div>
 		<div id="jb-header"  style="text-align: center;">
 			<h1>관리자 페이지 입니다.<br>      
  			조회하실 날짜를 선택해주세요.</h1>
@@ -36,7 +38,6 @@
 			</form>
 			</div>
 		</div>
-	</div>
 	
 	<script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -60,4 +61,10 @@
       });
    </script>
 </body>
+<br>
+<footer>
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="footer.jsp" flush="false"/>
+    </div>
+</footer>
 </html>

@@ -32,20 +32,23 @@
     </script>
 <link href="css/reservation.css" rel="stylesheet">
 </head>
-<body class="container">
-<form action="inform" method="post">
-    <div id="jb-container" style="align-content: center;">
+<body>
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="top.jsp" flush="false"/>
+    </div>
+	<form action="inform" method="post">
         <div id="jb-header"  style="text-align: center;">
            <h1>핸드폰 번호를 입력해주세요</h1><br>
             <p>
-                <input type="text" name = "revPhone">
+                <input type="text" name = "revPhone" placeholder="-을 제외하고 입력하세요">
 				<input class="btn btn-primary btn-sm" type="submit" value="확인">
         </div>
-
-
-    </div>
-
-</form>
-    
+	</form>
 </body>
+<br>
+<footer>
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="footer.jsp" flush="false"/>
+    </div>
+</footer>
 </html>

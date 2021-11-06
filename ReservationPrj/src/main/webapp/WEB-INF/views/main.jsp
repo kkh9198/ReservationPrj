@@ -35,7 +35,11 @@
 <link href="css/reservation.css" rel="stylesheet">
 </head>
 <body class="container">
-   <div id="jb-container">
+<!-- top.jsp -->
+    <div style="text-align: center;">
+   		<jsp:include page="top.jsp" flush="false"/>
+    </div>
+
       <div id="jb-header" style="text-align: center;">
          <h1>
             <c:choose>
@@ -43,49 +47,16 @@
                   관리자로 로그인 하였습니다.
                </c:when>
                <c:otherwise>
-                  안녕하세요
                </c:otherwise>
             </c:choose>
-            <p>삼조식당 예약 시스템입니다.</p>
          </h1>
-         <form action="dateselect">
-            <button class = "btn btn-primary btn-sm">예약하기</button>
-            <br>
-         </form>
-
-         <p>
-            <c:choose>
-               <c:when test="${sessionScope.adminId != null }">
-                  <form action="adminDate">
-                     <button class = "btn btn-primary btn-sm">관리자 조회</button>
-                  </form>
-               </c:when>
-               <c:otherwise>
-                  <form action="phone">
-                     <button class = "btn btn-primary btn-sm">예약 조회</button>
-                  </form>
-               </c:otherwise>
-            </c:choose>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
-      <p>
-      <p>
-      <div id="admin" style="font-size: small; text-align: center;">
-
-         <c:choose>
-            <c:when test="${sessionScope.adminId != null }">
-               <form action="adminLogout" method="post">
-                  <button>관리자 로그아웃</button>
-               </form>
-            </c:when>
-            <c:otherwise>
-               <form action="adminLogin">
-                  <button>관리자 로그인</button>
-               </form>
-            </c:otherwise>
-         </c:choose>
-
-      </div>
-   </div>
 </body>
-<footer> </footer>
+<br>
+<footer>
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="footer.jsp" flush="false"/>
+    </div>
+</footer>
 </html>

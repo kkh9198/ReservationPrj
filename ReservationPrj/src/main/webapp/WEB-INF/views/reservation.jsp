@@ -35,7 +35,9 @@
 
 <body class="container">
 
-	<div id="jb-container" style="align-content: center;">
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="top.jsp" flush="false"/>
+    </div>
 		<div id="jb-header" style="text-align: center;">
 			<h1>상세 정보를 입력해주세요</h1>
 			<p>
@@ -60,7 +62,7 @@
 						<tr>
 							<td>연락처 :</td>
 							<td><input type="text" name="phone" id="phone"
-								required="required"></td>
+								required="required" placeholder="-을 제외하고 입력하세요"></td>
 						</tr>
 						<tr>
 							<td>예약 인원 :</td>
@@ -148,6 +150,11 @@
          window.history.forward();
       }
     </script>
-
 </body>
+<br>
+<footer>
+	<div id="jb-container" style="text-align: center;">
+   		<jsp:include page="footer.jsp" flush="false"/>
+    </div>
+</footer>
 </html>
