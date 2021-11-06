@@ -5,8 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/reservation.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reservation.css">
 <head>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
@@ -31,14 +30,14 @@
 	integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
 	crossorigin="anonymous">
     </script>
-<link href="css/reservation.css" rel="stylesheet">
+
 </head>
 
 <body>
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-		<div id="jb-header" style="text-align: center;">
+		<div class="main-container">
 			<h1>
 				변경할 시간을 선택해주세요<br>
 			</h1>

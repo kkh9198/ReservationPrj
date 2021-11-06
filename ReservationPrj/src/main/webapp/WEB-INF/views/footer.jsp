@@ -28,7 +28,7 @@
 </head>
 <body>
 	<div class="footer-head">
-		<div class="box-left">삼조식당</div>
+		<div class="box-left-e">삼조식당</div>
 		<div class="box-center-e">
 			<div style="text-align: right";>
 				<a>개인정보 처리방침</a><br>

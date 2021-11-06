@@ -36,11 +36,11 @@
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-		<div id="jb-header" style="text-align: center;">
+		<div style="text-align: center;">
 		
-			<h1>${revList[0].name}님의예약 정보입니다.</h1>
+			<h1>${revList[0].name}님의 예약 정보입니다.</h1>
 			<br>
-			
+		<div class="main-container">
 			<table class="type09">
 				<tr>
 					<th>예약번호</th>
@@ -56,33 +56,33 @@
 				<c:forEach var="rev" items="${revList}">
 					
 					<tr>
-						<td>${rev.serialNumber}</td>
-						<td>${rev.name}</td>
+						<td style="width: 90px;">${rev.serialNumber}</td>
+						<td style="width: 90px;">${rev.name}</td>
 						<td>${rev.phone}</td>
 						<td>${rev.bookingDate}</td>
-						<td>${rev.bookingTime}</td>
-						<td>${rev.cnt}</td>
+						<td style="width: 90px;">${rev.bookingTime}</td>
+						<td style="width: 90px;">${rev.cnt}</td>
 						<td>${rev.details}</td>
 						<form action="update" method="post">
 							<c:choose>
 							<c:when test="${today > rev.bookingDate}">
-								<td><button class="btn btn-primary btn-sm" type="submit" disabled="disabled">수정</button></td>
+								<td style="padding: 10px;"><button class="btn btn-primary btn-sm" type="submit" disabled="disabled">수정</button></td>
 							</c:when>
 							<c:otherwise>
 								<input type="hidden" name="targetNumber" value="${rev.serialNumber}">
-								<td><button class="btn btn-primary btn-sm" type="submit">수정</button></td>
+								<td style="padding: 10px;"><button class="btn btn-primary btn-sm" type="submit">수정</button></td>
 							</c:otherwise>									
 							</c:choose>
 						</form>
 						<form action="delete" method="post">
 							<c:choose>
 							<c:when test="${today > rev.bookingDate}">
-								<td><button class="btn btn-primary btn-sm" type="submit" disabled="disabled">삭제</button></td>	
+								<td style="padding: 10px;"><button class="btn btn-primary btn-sm" type="submit" disabled="disabled">삭제</button></td>	
 							</c:when>
 							<c:otherwise>
 								<input type="hidden" name="number" value="${rev.serialNumber}">
 								<input type="hidden" name="targetPhone" value="${rev.phone}">
-								<td><button class="btn btn-primary btn-sm" type="submit">삭제</button></td>							
+								<td style="padding: 10px;"><button class="btn btn-primary btn-sm" type="submit">삭제</button></td>							
 							</c:otherwise>
 							</c:choose>
 						</form>
@@ -94,11 +94,12 @@
 					<button class="btn btn-primary btn-sm">홈으로</button>
 				</form>
 		</div>
+		</div>
 
 </body>
 <br>
 <footer>
-	<div id="jb-container" style="text-align: center;">
+	<div class="footer-head">
    		<jsp:include page="footer.jsp" flush="false"/>
     </div>
 </footer>

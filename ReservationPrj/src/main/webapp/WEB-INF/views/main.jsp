@@ -34,13 +34,13 @@
     </script>
 <link href="css/reservation.css" rel="stylesheet">
 </head>
-<body class="container">
+<body>
 <!-- top.jsp -->
     <div style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
 
-      <div id="jb-header" style="text-align: center;">
+      <div class="main-container">
          <h1>
             <c:choose>
                <c:when test="${sessionScope.adminId != null }">

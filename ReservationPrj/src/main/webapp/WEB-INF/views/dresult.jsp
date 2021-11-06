@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" type="text/css" href="/css/reservation.css">
 <head>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
@@ -32,11 +33,12 @@
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-		<div id="jb-header" style="text-align: center;">
-			<h1>삭제가 완료되었습니다.</h1>
-			<form action="main">
-				<button class="btn btn-primary btn-sm">홈으로</button>
-			</form>
+	<div class="main-container">
+		<h1>삭제가 완료되었습니다.</h1>
+		<form action="main">
+			<button class="btn btn-primary btn-sm">홈으로</button>
+		</form>
+	</div>
 </body>
 <br>
 <footer>

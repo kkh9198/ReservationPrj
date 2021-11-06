@@ -33,11 +33,11 @@
 <link href="css/reservation.css" rel="stylesheet">
 </head>
 
-<body class="container">
+<body>
     <div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-        <div id="jb-header" style="text-align: center;">
+        <div class="main-container">
             <h1>${revDate}의 예약 목록입니다.<br></h1>
             <h1>조회 할 예약 시간을 선택해주세요<br></h1>
         <div class="fade-in-box">

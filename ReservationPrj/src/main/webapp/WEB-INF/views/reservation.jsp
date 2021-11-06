@@ -33,12 +33,12 @@
 <link href="css/reservation.css" rel="stylesheet">
 </head>
 
-<body class="container">
+<body>
 
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-		<div id="jb-header" style="text-align: center;">
+		<div class="main-container">
 			<h1>상세 정보를 입력해주세요</h1>
 			<p>
 			<div class="fade-in-box">

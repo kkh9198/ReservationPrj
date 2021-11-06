@@ -36,7 +36,7 @@
     <div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-        <div id="jb-header"  style="text-align: center;">
+        <div class="main-container">
             <h1>${revList[0].bookingDate} / ${revList[0].bookingTime} 의 상세 정보입니다.</h1>
             <br>
             <p>

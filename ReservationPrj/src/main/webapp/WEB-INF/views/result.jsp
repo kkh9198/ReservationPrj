@@ -6,6 +6,7 @@
 
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/reservation.css">
 <head>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
@@ -32,15 +33,31 @@
     </script>
 
 </head>
-<body class="container">
+<body>
     <div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-        <div id="jb-header"  style="text-align: center;">
-	<h1>예약이 완료되었습니다.</h1>
-	<form action="main">
-	<button class="btn btn-primary btn-sm">홈으로</button>
-	</form>
+    <div class="main-container">
+		<h1>예약이 완료되었습니다.</h1>
+		<div>
+			<form action="main">
+			<button class="btn btn-primary btn-sm">홈으로</button>
+			</form>
+		</div>
+	</div>
+	<script>
+	function noEvent() { // 새로 고침 방지
+        if (event.keyCode == 116) {
+            alert("새로고침을 할 수 없습니다.");
+            event.keyCode = 2;
+            return false;
+        } else if (event.ctrlKey
+                && (event.keyCode == 78 || event.keyCode == 82)) {
+            return false;
+        }
+    }
+		document.onkeydown = noEvent;
+	</script>
 </body>
 <br>
 <footer>

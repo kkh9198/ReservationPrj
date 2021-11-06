@@ -28,15 +28,16 @@
     </script>
 <link href="css/reservation.css" rel="stylesheet">
 </head>
-<body class="container">
+<body>
     <div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-        <div id="jb-header"  style="text-align: center;">
+        <div class="main-container">
 	<h1>수정이 완료되었습니다.</h1>
 	<form action="main">
 	<button class="btn btn-primary btn-sm">홈으로</button>
 	</form>
+		</div>
 </body>
 <br>
 <footer>

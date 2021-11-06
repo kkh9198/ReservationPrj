@@ -38,12 +38,12 @@ pageEncoding="UTF-8"%>
    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.standalone.min.css">
 <link href="css/reservation.css" rel="stylesheet">
 </head>
-<body class="container">
-   <div id="jb-container" style="text-align: center;">
+<body>
+   <div style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
    </div>
-        <div id="jb-header"  style="text-align: center;">
-            <h1>예약 날짜를 선택해주세요<br></h1>
+        <div class="main-container">
+            <h1>예약 날짜를 선택해주세요</h1><br>
             <div class="fade-in-box">
          	<form action="timeselect" method="post">
 	        	<table class="type10">
@@ -61,7 +61,6 @@ pageEncoding="UTF-8"%>
             </form>
             </div>
         </div>
-    </div>
     
     <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

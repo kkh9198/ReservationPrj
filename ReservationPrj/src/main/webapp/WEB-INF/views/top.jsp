@@ -32,7 +32,7 @@
 	<div class="top-head">
 		<div class="box-left">
 			<!-- sidebar -->
-			<input type="checkbox" id="menuicon" style="margin-top:5px";> <label for="menuicon">
+			<input type="checkbox" id="menuicon";> <label for="menuicon">
 				<span></span> <span></span> <span></span>
 			</label>
 			<div class="sidebar">
@@ -77,10 +77,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="box-center"><h2>삼조식당</h2></div>
+		<div class="box-center"><h2 style="text-align: center;">삼조식당</h2></div>
 		<div class="box-right">
 			<a href="main"><i class="fas fa-home fa-2x"></i></a>
 		</div>
 	</div>
+	<br>
 </body>
 </html>
