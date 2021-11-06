@@ -68,10 +68,6 @@
 							</c:when>
 							<c:otherwise>
 								<input type="hidden" name="targetNumber" value="${rev.serialNumber}">
-								<input type="hidden" name="targetName" value="${rev.name}">
-								<input type="hidden" name="targetPhone" value="${rev.phone}">
-								<input type="hidden" name="targetCnt" value="${rev.cnt}">
-								<input type="hidden" name="targetDetails" value="${rev.details}">
 								<td><button class="btn btn-primary btn-sm" type="submit">수정</button></td>
 							</c:otherwise>									
 							</c:choose>

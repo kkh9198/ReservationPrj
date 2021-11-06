@@ -31,7 +31,7 @@ public class AdminRepository implements IAdminRepository {
 		}
 	}
 	
-	// 예약 정보를 모두 불러올때 사용할 매퍼?
+	// 예약 정보를 모두 불러올때 사용할 매퍼
 	private class ReservationMapper implements RowMapper<ReservationVO> {
 		@Override
 		public ReservationVO mapRow(ResultSet rs, int rowNum) throws SQLException {

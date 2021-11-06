@@ -73,7 +73,7 @@
 
          <c:choose>
             <c:when test="${sessionScope.adminId != null }">
-               <form action="adminLogout">
+               <form action="adminLogout" method="post">
                   <button>관리자 로그아웃</button>
                </form>
             </c:when>

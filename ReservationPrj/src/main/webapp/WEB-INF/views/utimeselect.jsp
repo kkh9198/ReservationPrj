@@ -63,11 +63,6 @@
 										<input type="hidden" name="updateDate" value="${updateDate}">
 										<input type="hidden" name="targetNumber"
 											value="${targetNumber}">
-										<input type="hidden" name="targetName" value="${targetName}">
-										<input type="hidden" name="targetPhone" value="${targetPhone}">
-										<input type="hidden" name="targetCnt" value="${targetCnt}">
-										<input type="hidden" name="targetDetails"
-											value="${targetDetails}">
 										<c:set var="data" value="yes" />
 										<c:if test="${rev.cnt == '10' }">
 											<c:set var="max" value="true" />
@@ -83,11 +78,6 @@
 								<input type="hidden" name="revDate" value="${revDate}">
 								<input type="hidden" name="updateDate" value="${updateDate}">
 								<input type="hidden" name="targetNumber" value="${targetNumber}">
-								<input type="hidden" name="targetName" value="${targetName}">
-								<input type="hidden" name="targetPhone" value="${targetPhone}">
-								<input type="hidden" name="targetCnt" value="${targetCnt}">
-								<input type="hidden" name="targetDetails"
-									value="${targetDetails}">
 							</c:if>
 							<td><c:choose>
 									<c:when test="${max == 'true'}">
@@ -116,11 +106,6 @@
 										<input type="hidden" name="updateDate" value="${updateDate}">
 										<input type="hidden" name="targetNumber"
 											value="${targetNumber}">
-										<input type="hidden" name="targetName" value="${targetName}">
-										<input type="hidden" name="targetPhone" value="${targetPhone}">
-										<input type="hidden" name="targetCnt" value="${targetCnt}">
-										<input type="hidden" name="targetDetails"
-											value="${targetDetails}">
 										<c:set var="data" value="yes" />
 										<c:if test="${rev.cnt == '10' }">
 											<c:set var="max" value="true" />
@@ -136,11 +121,6 @@
 								<input type="hidden" name="revDate" value="${revDate}">
 								<input type="hidden" name="updateDate" value="${updateDate}">
 								<input type="hidden" name="targetNumber" value="${targetNumber}">
-								<input type="hidden" name="targetName" value="${targetName}">
-								<input type="hidden" name="targetPhone" value="${targetPhone}">
-								<input type="hidden" name="targetCnt" value="${targetCnt}">
-								<input type="hidden" name="targetDetails"
-									value="${targetDetails}">
 							</c:if>
 							<td><c:choose>
 									<c:when test="${max == 'true'}">
@@ -169,11 +149,6 @@
 										<input type="hidden" name="updateDate" value="${updateDate}">
 										<input type="hidden" name="targetNumber"
 											value="${targetNumber}">
-										<input type="hidden" name="targetName" value="${targetName}">
-										<input type="hidden" name="targetPhone" value="${targetPhone}">
-										<input type="hidden" name="targetCnt" value="${targetCnt}">
-										<input type="hidden" name="targetDetails"
-											value="${targetDetails}">
 										<c:set var="data" value="yes" />
 										<c:if test="${rev.cnt == '10' }">
 											<c:set var="max" value="true" />
@@ -189,11 +164,6 @@
 								<input type="hidden" name="revDate" value="${revDate}">
 								<input type="hidden" name="updateDate" value="${updateDate}">
 								<input type="hidden" name="targetNumber" value="${targetNumber}">
-								<input type="hidden" name="targetName" value="${targetName}">
-								<input type="hidden" name="targetPhone" value="${targetPhone}">
-								<input type="hidden" name="targetCnt" value="${targetCnt}">
-								<input type="hidden" name="targetDetails"
-									value="${targetDetails}">
 							</c:if>
 							<td><c:choose>
 									<c:when test="${max == 'true'}">
@@ -221,11 +191,6 @@
 										<input type="hidden" name="updateDate" value="${updateDate}">
 										<input type="hidden" name="targetNumber"
 											value="${targetNumber}">
-										<input type="hidden" name="targetName" value="${targetName}">
-										<input type="hidden" name="targetPhone" value="${targetPhone}">
-										<input type="hidden" name="targetCnt" value="${targetCnt}">
-										<input type="hidden" name="targetDetails"
-											value="${targetDetails}">
 										<c:set var="data" value="yes" />
 										<c:if test="${rev.cnt == '10' }">
 											<c:set var="max" value="true" />
@@ -241,11 +206,6 @@
 								<input type="hidden" name="revDate" value="${revDate}">
 								<input type="hidden" name="updateDate" value="${updateDate}">
 								<input type="hidden" name="targetNumber" value="${targetNumber}">
-								<input type="hidden" name="targetName" value="${targetName}">
-								<input type="hidden" name="targetPhone" value="${targetPhone}">
-								<input type="hidden" name="targetCnt" value="${targetCnt}">
-								<input type="hidden" name="targetDetails"
-									value="${targetDetails}">
 							</c:if>
 							<td><c:choose>
 									<c:when test="${max == 'true'}">

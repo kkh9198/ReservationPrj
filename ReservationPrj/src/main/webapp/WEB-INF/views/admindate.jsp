@@ -29,7 +29,7 @@
 	            <table class="type10">
 	        	<tr>
 	            	<td><label>날짜</label></td>
-	            	<td><input type="text" name="revDate" id="datePicker" autocomplete="off"></td>
+	            	<td><input type="text" name="revDate" id="datePicker" autocomplete="off" required="required"></td>
 	         	</tr>
 	            </table><br>
             	<input class ="button-base ripple" type="submit" value="선택">

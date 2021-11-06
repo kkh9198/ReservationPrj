@@ -26,10 +26,6 @@ pageEncoding="UTF-8"%>
             <div class="fade-in-box">
          	<form action="updateTimeselect" method="post">
          		<input type="hidden" name="targetNumber" value="${targetNumber}">
-         		<input type="hidden" name="targetName" value="${targetName}">
-           		<input type="hidden" name="targetPhone" value="${targetPhone}">
-				<input type="hidden" name="targetCnt" value="${targetCnt}">
-				<input type="hidden" name="targetDetails" value="${targetDetails}">
 	        	<table class="type10">
 	         	<tr>
 	            	<td><label>날짜</label></td>

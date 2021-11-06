@@ -33,7 +33,7 @@ public class AdminController {
 	}
 	
 	// 메인페이지에서 관리자 로그아웃 버튼 클릭
-	@RequestMapping(value = "/adminLogout")
+	@RequestMapping(value = "/adminLogout", method = RequestMethod.POST)
 	public String adminLogout(HttpSession session) {
 		session.invalidate();	
 		return "redirect:/";
