@@ -37,7 +37,8 @@
     <div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-    <div class="main-container">
+<hr>    
+    <div class="main-container fade-in-box">
 		<h1>예약이 완료되었습니다.</h1>
 		<div>
 			<form action="main">
@@ -59,7 +60,6 @@
 		document.onkeydown = noEvent;
 	</script>
 </body>
-<br>
 <footer>
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="footer.jsp" flush="false"/>

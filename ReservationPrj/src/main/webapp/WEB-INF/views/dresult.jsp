@@ -33,14 +33,14 @@
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-	<div class="main-container">
+<hr>    
+	<div class="main-container fade-in-box">
 		<h1>삭제가 완료되었습니다.</h1>
 		<form action="main">
 			<button class="btn btn-primary btn-sm">홈으로</button>
 		</form>
 	</div>
 </body>
-<br>
 <footer>
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="footer.jsp" flush="false"/>

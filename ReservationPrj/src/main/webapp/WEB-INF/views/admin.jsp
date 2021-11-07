@@ -33,51 +33,47 @@
 <link href="css/reservation.css" rel="stylesheet">
 </head>
 <body>
-	
-		<div id="jb-container" style="text-align: center;">
-   			<jsp:include page="top.jsp" flush="false"/>
-   		</div>
-			<div class="main-container">
-				관리자 로그인 페이지입니다.<br>
-				<p>
-					<c:if test="${fail == 'fail'}">
+	<div id="jb-container" style="text-align: center;">
+		<jsp:include page="top.jsp" flush="false" />
+	</div>
+	<hr>
+	<div class="main-container fade-in-box">
+		관리자 로그인 페이지입니다.<br>
+		<p>
+			<c:if test="${fail == 'fail'}">
                로그인실패입니다.<br>
                다시 아이디와 비밀번호를 입력하세요<br>
-					</c:if>
-					<form action="adminOK" method="post">
-					<table class="type10">
-	         	<tr>
-	            	<td>
-	            		<label>아이디: </label>
-	            	</td>
-	            	<td>
-	            		<div>
-	            			<input type="text" name="adminId">
-	            		</div>
-	            	</td>
-	         	</tr>
-	         	<tr>
-	            	<td>
-	            		<label>비밀번호 : </label>
-	            	</td>
-	            	<td>
-	            		<div>
-	            			<input type="password" name="adminPw">
-	            		</div>
-	            	</td>
-	         	</tr>
-	            </table><br>
-				<input	class="button-base ripple" type="submit" value="확인">
-			</form><p>
-			<form action="main">
-				<input class="button-base ripple" type="submit" value="취소">
-			</form>
-			</div>
+			</c:if>
+		<form action="adminOK" method="post">
+			<table class="type10">
+				<tr>
+					<td><label>아이디: </label></td>
+					<td>
+						<div>
+							<input type="text" name="adminId">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><label>비밀번호 : </label></td>
+					<td>
+						<div>
+							<input type="password" name="adminPw">
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br> <input class="button-base ripple" type="submit" value="확인">
+		</form>
+		<p>
+		<form action="main">
+			<input class="button-base ripple" type="submit" value="취소">
+		</form>
+	</div>
 </body>
-<br>
 <footer>
 	<div id="jb-container" style="text-align: center;">
-   		<jsp:include page="footer.jsp" flush="false"/>
-    </div>
+		<jsp:include page="footer.jsp" flush="false" />
+	</div>
 </footer>
 </html>

@@ -42,6 +42,7 @@ pageEncoding="UTF-8"%>
    <div style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
    </div>
+<hr>   
         <div class="main-container">
             <h1>예약 날짜를 선택해주세요</h1><br>
             <div class="fade-in-box">
@@ -87,7 +88,6 @@ pageEncoding="UTF-8"%>
       });
    </script>
 </body>
-<br>
 <footer>
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="footer.jsp" flush="false"/>

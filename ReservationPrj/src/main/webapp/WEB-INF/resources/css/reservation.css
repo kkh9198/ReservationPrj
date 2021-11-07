@@ -212,7 +212,7 @@ h1 {
   }
 
 .fade-in-box {
-    display: inline-block;
+    display: float;
     padding: 10px;
     animation: fadein 3s;
     -moz-animation: fadein 3s; /* Firefox */
@@ -434,6 +434,18 @@ div[class="sidebar"]{
 	transition: all .35s;
 }
 
+div[class="sidebar2"]{
+	width:600px;
+	height: 100%;
+	position: fixed;
+	background-color : white;
+	top: 0;
+	right: -400px;
+	z-index:1;
+	transition: all .35s;
+}
+
+
 input[id="menuicon"]:checked + label + div {
 	left:70px;
 }
@@ -463,6 +475,10 @@ input[id="menuicon"]:checked + label + div {
 	clear: both;
 }
 
+.footer{
+	clear:both;
+}
+
 .box-right{
 	width: 30%;
 	float: right;
@@ -482,7 +498,8 @@ input[id="menuicon"]:checked + label + div {
 
 .box-center{
 	flex: 1;
-	margin-right: 100px;
+	float: left;
+	margin-right: 160px;
 
 }
 
@@ -492,20 +509,26 @@ input[id="menuicon"]:checked + label + div {
 	margin-right:350px;
 }
 
+
+
 .left-card{
-	width: 33%;
+	width: 27%;
 	float:left;
-	height: 100px;
+	height: 300px;
+	margin-left: 140px;
+	background-color: red;
 }
 
 .center-card{
-	width:33%;
+	width:27%;
 	float:left;
-	height: 100px;
+	height: 300px;
+	background-color: yellow;
 }
 
 .right-card{
-	width:33%;
+	width:27%;
 	float:left;
-	height: 100px;
+	height: 300px;
+	background-color: green;
 }

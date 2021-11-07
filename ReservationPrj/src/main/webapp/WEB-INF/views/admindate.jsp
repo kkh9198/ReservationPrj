@@ -42,6 +42,7 @@
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
+<hr>
 		<div class="main-container">
 			<h1>관리자 페이지 입니다.<br>      
  			조회하실 날짜를 선택해주세요.</h1>
@@ -80,7 +81,6 @@
       });
    </script>
 </body>
-<br>
 <footer>
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="footer.jsp" flush="false"/>

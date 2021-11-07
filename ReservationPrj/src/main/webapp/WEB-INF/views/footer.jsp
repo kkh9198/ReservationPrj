@@ -27,6 +27,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
+	<div>
+	<hr>
+	</div>
 	<div class="footer-head">
 		<div class="box-left-e">삼조식당</div>
 		<div class="box-center-e">

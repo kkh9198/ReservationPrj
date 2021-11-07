@@ -57,24 +57,26 @@
 							</form>
 						</c:otherwise>
 					</c:choose>
-					<br>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 					
 					<!-- 로그인하기 -->
 					<div id="admin" style="font-size: small; text-align: center;">
 						<c:choose>
 							<c:when test="${sessionScope.adminId != null }">
 								<form action="adminLogout" method="post">
-									<button>관리자 로그아웃</button>
+									<button class="button-base ripple">관리자 로그아웃</button>
 								</form>
 							</c:when>
 							<c:otherwise>
 								<form action="adminLogin">
-									<button>관리자 로그인</button>
+									<button class="button-base ripple">관리자 로그인</button>
 								</form>
 							</c:otherwise>
 						</c:choose>
 					</div>
 				</div>
+			</div>
+			<div class="sidebar2">
 			</div>
 		</div>
 		<div class="box-center"><h2 style="text-align: center;">삼조식당</h2></div>

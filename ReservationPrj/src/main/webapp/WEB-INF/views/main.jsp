@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css"
-   href="${pageContext.request.contextPath}/resources/css/reservation.css">
+	href="${pageContext.request.contextPath}/resources/css/reservation.css">
 <head>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
@@ -35,53 +35,45 @@
 <link href="css/reservation.css" rel="stylesheet">
 </head>
 <body>
-<!-- top.jsp -->
-    <div style="text-align: center;">
-   		<jsp:include page="top.jsp" flush="false"/>
-    </div>
-<hr>
-      <div class="main-container">
-	      <div class="img-box">
-	      		<div class="main-img"><br>
-	      			<h4 class="main-title">안녕하세요</h4>
-	      		<!-- 예약하기 -->
-	      			<div style="bottom:80px;">
-						<form action="dateselect">
-							<button class="btn btn-primary btn-sm">예약하기</button>
-							<br>
-						</form>
-					</div>
-	         	</div>
-	      </div>
-            <c:choose>
-               <c:when test="${sessionScope.adminId != null }">
-                  관리자로 로그인 하였습니다.
-               </c:when>
-               <c:otherwise>
-               </c:otherwise>
-            </c:choose>
-		<div class="left-card">
-		card1<p>
-		한 타임에 10명씩
-		<br>
-		<br>
-		<br>
-		<br>
+	<!-- top.jsp -->
+	<div style="text-align: center;">
+		<jsp:include page="top.jsp" flush="false" />
+	</div>
+	<hr>
+	<div class="main-container fade-in-box">
+		<div class="img-box">
+			<div class="main-img">
+				<br>
+				<c:choose>
+					<c:when test="${sessionScope.adminId != null }">
+						<h4 class="main-title">관리자로 로그인 하였습니다.</h4>
+					</c:when>
+					<c:otherwise>
+						<h4 class="main-title">안녕하세요</h4>
+					</c:otherwise>
+				</c:choose>
+				<!-- 예약하기 -->
+				<div style="bottom: 80px;">
+					<form action="dateselect">
+						<button class="btn btn-primary btn-sm">예약하기</button>
+						<br>
+					</form>
+				</div>
+			</div>
 		</div>
-		<div class="center-card">
-		card2
-		총 4타임 운영
+		<div>
+			<div class="left-card">
+				card1
+					한 타임에 10명씩 <br> <br> <br> <br>
+			</div>
+			<div class="center-card">card2 총 4타임 운영</div>
+			<div class="right-card">card3 운영 시간</div>
 		</div>
-		<div class="right-card">
-		card3
-		운영 시간
-		</div>
-      </div>
+	</div>
 </body>
-<hr>
 <footer>
-	<div id="jb-container" style="text-align: center;">
-   		<jsp:include page="footer.jsp" flush="false"/>
-    </div>
+	<div class="footer" style="text-align: center;">
+		<jsp:include page="footer.jsp" flush="false" />
+	</div>
 </footer>
 </html>

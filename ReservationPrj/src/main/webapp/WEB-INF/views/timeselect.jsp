@@ -37,6 +37,7 @@
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
+<hr>    
 		<div class="main-container">
 			<h1>예약 시간을 선택해주세요<br></h1>
         <div class="fade-in-box">
@@ -205,7 +206,6 @@
         </div>
     </div>
 </body>
-<br>
 <footer>
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="footer.jsp" flush="false"/>

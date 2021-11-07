@@ -36,10 +36,10 @@
     <div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
+<hr>   
         <div class="main-container">
             <h1>${revList[0].bookingDate} / ${revList[0].bookingTime} 의 상세 정보입니다.</h1>
-            <br>
-            <p>
+            <div class="fade-in-box">
 			<table class="type09">
 				<tr>
 					<th>예약번호</th>
@@ -91,13 +91,13 @@
 					</tr>
 					
 			</table>
+			</div>
 			<p>
 				<form action="main">
 					<button class="btn btn-primary btn-sm">홈으로</button>
 				</form>
 		</div>
 </body>
-<br>
 <footer>
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="footer.jsp" flush="false"/>

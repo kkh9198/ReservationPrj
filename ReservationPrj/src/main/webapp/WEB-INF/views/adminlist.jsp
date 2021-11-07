@@ -37,6 +37,7 @@
     <div id="jb-container" style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
+<hr>    
         <div class="main-container">
             <h1>${revDate}의 예약 목록입니다.<br></h1>
             <h1>조회 할 예약 시간을 선택해주세요<br></h1>
@@ -159,9 +160,7 @@
             </table>			
         </div>
     </div>
-
 </body>
-<br>
 <footer>
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="footer.jsp" flush="false"/>
