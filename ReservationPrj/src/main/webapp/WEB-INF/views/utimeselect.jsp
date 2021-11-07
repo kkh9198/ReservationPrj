@@ -25,11 +25,11 @@
 				<th>현재 예약 인원</th>
 				<th>예약하기</th>
 				<tr>
-					<td rowspan="5">${updateDate}</td>
+					<td rowspan="5">${updateDate}<p>타임당 10인</td>
 				</tr>
 				<tr>
 					<form action="updateReservation" method="post">
-						<td>런치 1</td>
+						<td>런치 1 (12:00~13:00)</td>
 						<c:set var="data" value="no" />
 						<c:set var="max" value="false" />
 						<c:forEach var="rev" items="${revList}">
@@ -72,7 +72,7 @@
 
 				<tr>
 					<form action="updateReservation" method="post">
-						<td>런치 2</td>
+						<td>런치 2 (13:00~14:00)</td>
 						<c:set var="data" value="no" />
 						<c:set var="max" value="false" />
 						<c:forEach var="rev" items="${revList}">
@@ -115,7 +115,7 @@
 
 				<tr>
 					<form action="updateReservation" method="post">
-						<td>디너 1</td>
+						<td>디너 1 (18:00~19:00)</td>
 						<c:set var="data" value="no" />
 						<c:set var="max" value="false" />
 						<c:forEach var="rev" items="${revList}">
@@ -157,7 +157,7 @@
 				</tr>
 				<tr>
 					<form action="updateReservation" method="post">
-						<td>디너 2</td>
+						<td>디너 2 (19:00~20:00)</td>
 						<c:set var="data" value="no" />
 						<c:set var="max" value="false" />
 						<c:forEach var="rev" items="${revList}">
