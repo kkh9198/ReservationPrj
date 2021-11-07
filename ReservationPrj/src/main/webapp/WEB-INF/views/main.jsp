@@ -6,33 +6,9 @@
 
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/reservation.css">
 <head>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
-<!-- Favicon -->
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script type="text/javascript"></script>
-
-<!-- Import bootstrap cdn -->
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-	crossorigin="anonymous">
-
-<!-- Import jquery cdn -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-	crossorigin="anonymous">
-    </script>
-
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-	crossorigin="anonymous">
-    </script>
-<link href="css/reservation.css" rel="stylesheet">
 </head>
 <body>
 	<!-- top.jsp -->
@@ -55,7 +31,7 @@
 				<!-- 예약하기 -->
 				<div style="bottom: 80px;">
 					<form action="dateselect">
-						<button class="btn btn-primary btn-sm">예약하기</button>
+						<button class="btn btn-primary btn-sm" style="background-color:transparent; border:none;">예약하기</button>
 						<br>
 					</form>
 				</div>
@@ -63,11 +39,23 @@
 		</div>
 		<div>
 			<div class="left-card">
-				card1
-					한 타임에 10명씩 <br> <br> <br> <br>
+				<div style="margin-top:50px;">
+				<i class="fas fa-users fa-3x"></i><p>
+				<h2>한 타임에 10명씩</h2>
+				</div>
 			</div>
-			<div class="center-card">card2 총 4타임 운영</div>
-			<div class="right-card">card3 운영 시간</div>
+			<div class="center-card">
+				<div style="margin-top:50px;">
+				<i class="far fa-clock fa-3x"></i><p>
+				<h2>총 4타임 운영</h2>
+				</div>
+			</div>
+			<div class="right-card">
+				<div style="margin-top:50px;">
+				<i class="fas fa-map-signs fa-3x"></i><p>
+				<h2>오시는 길</h2>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
