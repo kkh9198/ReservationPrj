@@ -13,10 +13,9 @@
 	<div id="jb-container" style="text-align: center;">
 		<jsp:include page="top.jsp" flush="false" />
 	</div>
-	<hr>
 	<div style="text-align: center;">
 
-		<h1>${revList[0].name}님의 예약 정보입니다.</h1>
+		<h1 style="color: aliceblue;">${revList[0].name}님의 예약 정보입니다.</h1>
 		<br>
 		<div class="main-container fade-in-box">
 			<table class="type09">

@@ -8,14 +8,12 @@
 <head>
 <meta charset="UTF-8">
 <title>삼조식당 예약</title>
-
 <body>
 	<div id="jb-container" style="text-align: center;">
 		<jsp:include page="top.jsp" flush="false" />
 	</div>
-<hr>
-	<div class="main-container">
-		<h1>
+	<div class="main-container main-img fade-in-box">
+		<h1 style="color: aliceblue;">
 			변경할 시간을 선택해주세요<br>
 		</h1>
 		<div class="fade-in-box">

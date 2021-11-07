@@ -10,11 +10,10 @@
 	<div id="jb-container" style="text-align: center;">
 		<jsp:include page="top.jsp" flush="false" />
 	</div>
-<hr>
-	<div class="main-container">
-		<h1>수정이 완료되었습니다.</h1>
+	<div class="main-container main-img fade-in-box">
+		<h1 style="color: aliceblue;">수정이 완료되었습니다.</h1>
 		<form action="main">
-			<button class="btn btn-primary btn-sm">홈으로</button>
+			<button class="btn btn-primary btn-sm" style="background-color: transparent; border: none; margin-top:150px;">홈으로</button>
 		</form>
 	</div>
 </body>

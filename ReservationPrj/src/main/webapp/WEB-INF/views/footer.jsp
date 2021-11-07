@@ -31,12 +31,15 @@
 	<hr>
 	</div>
 	<div class="footer-head">
-		<div class="box-left-e">삼조식당</div>
-		<div class="box-center-e">
+		<div class="box-left-e" style="color:white; size:60px">
+			<i class="fab fa-old-republic fa-5x"></i>
+			<p>삼조스시</p>
+		</div>
+		<div class="box-center-e" style="color:white;">
 			<div style="text-align: right";>
 				<a>개인정보 처리방침</a><br>
-				<a>삼조식당 || 사업자등록번호: 011-123-4567 || 대표자: 김강현</a><br>
-				<a>개인정보 책임자: 신희섭 || 고객센터: 010-5252-1515</a><br>
+				<a>일반음식점 || 사업자등록번호: 011-123-4567 || 대표자: 김강현</a><br>
+				<a>개인정보 책임자: 신희섭 || 고객센터: 010-5252-8282</a><br>
 				<a>E-Mail: samjosushi@naver.com || 신한: 110-320-786886 노현진</a><br>
 				<a>주소: 서울특별시 종로구 창경궁로 254 1층</a><br>
 				<a>COPYRIGHT(C) 1968DOTCTORMATIRE ALL RIGHT RESERVED.</a><br>

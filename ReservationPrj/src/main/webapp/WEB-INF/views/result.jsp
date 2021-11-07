@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -11,15 +11,14 @@
 <title>삼조식당 예약</title>
 </head>
 <body>
-    <div id="jb-container" style="text-align: center;">
-   		<jsp:include page="top.jsp" flush="false"/>
-    </div>
-<hr>    
-    <div class="main-container fade-in-box">
-		<h1>예약이 완료되었습니다.</h1>
+	<div id="jb-container" style="text-align: center;">
+		<jsp:include page="top.jsp" flush="false" />
+	</div>
+	<div class="main-container main-img fade-in-box">
+		<h1 style="color: aliceblue;">예약이 완료되었습니다.</h1>
 		<div>
 			<form action="main">
-			<button class="btn btn-primary btn-sm">홈으로</button>
+				<button class="btn btn-primary btn-sm" style="background-color: transparent; border: none; margin-top:150px;">홈으로</button>
 			</form>
 		</div>
 	</div>
@@ -39,7 +38,7 @@
 </body>
 <footer>
 	<div id="jb-container" style="text-align: center;">
-   		<jsp:include page="footer.jsp" flush="false"/>
-    </div>
+		<jsp:include page="footer.jsp" flush="false" />
+	</div>
 </footer>
 </html>

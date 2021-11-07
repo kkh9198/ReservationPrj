@@ -13,9 +13,8 @@
 	<div id="jb-container" style="text-align: center;">
 		<jsp:include page="top.jsp" flush="false" />
 	</div>
-	<hr>
-	<div class="main-container fade-in-box">
-		관리자 로그인 페이지입니다.<br>
+	<div class="main-container main-img fade-in-box">
+		<h1 style="color:aliceblue;">관리자 로그인 페이지입니다.</h1><br>
 		<p>
 			<c:if test="${fail == 'fail'}">
                로그인실패입니다.<br>

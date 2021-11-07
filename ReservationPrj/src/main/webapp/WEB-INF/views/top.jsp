@@ -15,81 +15,83 @@
 <script type="text/javascript"></script>
 
 <!-- Import bootstrap cdn -->
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+
 
 <!-- Import jquery cdn -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 	integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 	crossorigin="anonymous">
     </script>
-
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-	integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-	crossorigin="anonymous">
-    </script>
 </head>
 <body>
-<p>
-	<div class="top-head">
-		<div class="box-left">
-			<!-- sidebar -->
-			<input type="checkbox" id="menuicon";> <label for="menuicon">
-				<span></span> <span></span> <span></span>
-			</label>
-			<div class="sidebar">
-				<div style="margin-top: 100px";>
-					<!-- 예약하기 -->
-					<form action="dateselect">
-						<button class="btn btn-primary btn-sm">예약하기</button>
-						<br>
+	<p>
+	<div class="collapse" id="navbarToggleExternalContent">
+		<div class="bg-dark p-4">
+			<form action="main">
+				<button class="button-base ripple"
+					style="background-color: transparent; border: none; font-size: 20px">홈으로</button>
+			</form>
+			<br>
+			<form action="dateselect">
+				<button class="button-base ripple"
+					style="background-color: transparent; border: none; font-size: 20px">예약하기</button>
+			</form>
+			<br>
+			<!-- 조회하기 -->
+			<c:choose>
+				<c:when test="${sessionScope.adminId != null }">
+					<form action="adminDate">
+						<button class="button-base ripple"
+							style="background-color: transparent; border: none; font-size: 20px">관리자
+							조회</button>
 					</form>
-					<br>
-				
-					<!-- 조회하기 -->
-					<c:choose>
-						<c:when test="${sessionScope.adminId != null }">
-							<form action="adminDate">
-								<button class="btn btn-primary btn-sm">관리자 조회</button>
-							</form>
-						</c:when>
-						<c:otherwise>
-							<form action="phone">
-								<button class="btn btn-primary btn-sm">예약조회</button>
-							</form>
-						</c:otherwise>
-					</c:choose>
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					
-					<!-- 로그인하기 -->
-					<div id="admin" style="font-size: small; text-align: center;">
-						<c:choose>
-							<c:when test="${sessionScope.adminId != null }">
-								<form action="adminLogout" method="post">
-									<button class="button-base ripple">관리자 로그아웃</button>
-								</form>
-							</c:when>
-							<c:otherwise>
-								<form action="adminLogin">
-									<button class="button-base ripple">관리자 로그인</button>
-								</form>
-							</c:otherwise>
-						</c:choose>
-					</div>
-				</div>
+				</c:when>
+				<c:otherwise>
+					<form action="phone">
+						<button class="button-base ripple"
+							style="background-color: transparent; border: none; font-size: 20px">예약조회</button>
+					</form>
+				</c:otherwise>
+			</c:choose>
+			<br>
+			<!-- 로그인하기 -->
+			<div id="admin" style="font-size: small; text-align: center;">
+				<c:choose>
+					<c:when test="${sessionScope.adminId != null }">
+						<form action="adminLogout" method="post">
+							<button class="button-base ripple">관리자 로그아웃</button>
+						</form>
+					</c:when>
+					<c:otherwise>
+						<form action="adminLogin">
+							<button class="button-base ripple">관리자 로그인</button>
+						</form>
+					</c:otherwise>
+				</c:choose>
 			</div>
-			<div class="sidebar2">
-			</div>
-		</div>
-		<div class="box-center">
-			<a href="main"><img src="/img/logo.jpg" style="text-align: center;"></a>
-		</div>
-		<div class="box-right">
-			<a href="main"><i class="fas fa-home fa-2x"></i></a>
 		</div>
 	</div>
+
+
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#navbarToggleExternalContent"
+				aria-controls="navbarToggleExternalContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+	</nav>
 </body>
 </html>
