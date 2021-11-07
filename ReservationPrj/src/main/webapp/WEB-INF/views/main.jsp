@@ -39,9 +39,20 @@
     <div style="text-align: center;">
    		<jsp:include page="top.jsp" flush="false"/>
     </div>
-
+<hr>
       <div class="main-container">
-         <h1>
+	      <div class="img-box">
+	      		<div class="main-img"><br>
+	      			<h4 class="main-title">안녕하세요</h4>
+	      		<!-- 예약하기 -->
+	      			<div style="bottom:80px;">
+						<form action="dateselect">
+							<button class="btn btn-primary btn-sm">예약하기</button>
+							<br>
+						</form>
+					</div>
+	         	</div>
+	      </div>
             <c:choose>
                <c:when test="${sessionScope.adminId != null }">
                   관리자로 로그인 하였습니다.
@@ -49,11 +60,25 @@
                <c:otherwise>
                </c:otherwise>
             </c:choose>
-         </h1>
-		<br><br><br><br><br><br><br><br><br><br><br><br>
+		<div class="left-card">
+		card1<p>
+		한 타임에 10명씩
+		<br>
+		<br>
+		<br>
+		<br>
+		</div>
+		<div class="center-card">
+		card2
+		총 4타임 운영
+		</div>
+		<div class="right-card">
+		card3
+		운영 시간
+		</div>
       </div>
 </body>
-<br>
+<hr>
 <footer>
 	<div id="jb-container" style="text-align: center;">
    		<jsp:include page="footer.jsp" flush="false"/>
