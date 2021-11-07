@@ -58,7 +58,7 @@
 						</c:when>
 						<c:otherwise>
 							<form action="phone">
-								<button class="btn btn-primary btn-sm">예약 조회</button>
+								<button class="btn btn-primary btn-sm">예약조회</button>
 							</form>
 						</c:otherwise>
 					</c:choose>

@@ -55,16 +55,16 @@
 					<br>
 					<!-- Button to invoke the modal -->
 					<button type="button" class="btn btn-primary btn-sm"
-						data-toggle="modal" data-target="#exampleModal" id="submit">
+						data-toggle="modal" data-target="#Modal" id="submit">
 						예약하기</button>
 					<!-- Modal -->
-					<div class="modal fade" id="exampleModal" tabindex="-1"
-						aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal fade" id="Modal" tabindex="-1"
+						aria-labelledby="ModalLabel" aria-hidden="true">
 
 						<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">상세 정보 확인</h5>
+									<h5 class="modal-title" id="ModalLabel">상세 정보 확인</h5>
 
 									<button type="button" class="close" data-dismiss="modal"
 										aria-label="Close">
@@ -87,7 +87,7 @@
 									<p>
 
 										<input type="submit" class="btn btn-success btn-sm"
-											data-toggle="modal" data-target="#exampleModal" id="submit">
+											data-toggle="modal" data-target="#Modal" id="submit">
 								</div>
 							</div>
 						</div>
